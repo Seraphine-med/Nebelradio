@@ -172,20 +172,20 @@ playButton.onclick = function(){
 
 playCurrentSong(position.time);
     
-       audio.onended = function(){
+       audio.onloadedmetadata = function(){
 
-        vinyl.classList.remove("playing");
+    console.log("Audio načteno");
+    console.log("Délka:", audio.duration);
+    console.log("Start:", startTime);
 
-        const position = getBroadcastPosition();
+    audio.currentTime = Math.min(startTime, audio.duration - 0.1);
 
-        if(position){
-
-            currentSong = position.songIndex;
-
-            playCurrentSong(position.time);
-
-        }
-
-    };
+    audio.play()
+    .then(() => {
+        console.log("Přehrávání spuštěno");
+    })
+    .catch(error => {
+        console.log("Chyba play:", error);
+    });
 
 };
