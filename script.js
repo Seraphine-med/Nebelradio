@@ -111,8 +111,7 @@ playButton.onclick = function(){
 
     currentSong = position.songIndex;
 
-
-    audio.src = playlist[currentSong].url;
+loadSong();
 
 
 audio.addEventListener("loadedmetadata", function(){
