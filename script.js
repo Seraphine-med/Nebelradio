@@ -109,6 +109,13 @@ function getBroadcastPosition(){
 
 playButton.onclick = function(){
 
+    if(durations.length === 0){
+
+    alert("Rádio se ještě načítá, zkus to za chvíli.");
+
+    return;
+
+}
     const position = getBroadcastPosition();
 
 
