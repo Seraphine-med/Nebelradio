@@ -48,7 +48,6 @@ function loadSong(){
 }
 
 
-
 function getBroadcastPosition(){
 
     return {
@@ -57,36 +56,6 @@ function getBroadcastPosition(){
     };
 
 }
-
-
-    let position = elapsed;
-
-
-    for(let i = 0; i < playlist.length; i++){
-
-        if(position < playlist[i].duration){
-
-            return {
-
-                songIndex:i,
-
-                time:position
-
-            };
-
-        }
-
-
-        position -= playlist[i].duration;
-
-    }
-
-
-    return null;
-
-}
-
-
 
 
 playButton.onclick = function(){
