@@ -83,9 +83,23 @@ function playCurrentSong(startTime){
 
     audio.onloadedmetadata = function(){
 
+        console.log("Audio načteno");
+        console.log("Délka:", audio.duration);
+        console.log("Start:", startTime);
+
         audio.currentTime = Math.min(startTime, audio.duration - 0.1);
 
-        audio.play();
+        audio.play()
+        .then(() => {
+
+            console.log("Přehrávání spuštěno");
+
+        })
+        .catch(error => {
+
+            console.log("Chyba play:", error);
+
+        });
 
     };
 
@@ -167,25 +181,23 @@ playButton.onclick = function(){
     }
 
 
-   currentSong = position.songIndex;
+     currentSong = position.songIndex;
+
+    playCurrentSong(position.time);
 
 
-playCurrentSong(position.time);
-    
-       audio.onloadedmetadata = function(){
+    audio.onended = function(){
 
-    console.log("Audio načteno");
-    console.log("Délka:", audio.duration);
-    console.log("Start:", startTime);
+        const position = getBroadcastPosition();
 
-    audio.currentTime = Math.min(startTime, audio.duration - 0.1);
+        if(position){
 
-    audio.play()
-    .then(() => {
-        console.log("Přehrávání spuštěno");
-    })
-    .catch(error => {
-        console.log("Chyba play:", error);
-    });
+            currentSong = position.songIndex;
+
+            playCurrentSong(position.time);
+
+        }
+
+    };
 
 };
