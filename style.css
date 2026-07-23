@@ -96,6 +96,8 @@ button:hover {
 
 .vinyl.playing{
 
+    /* update */
+
     animation:spin 4s linear infinite;
 
 }
