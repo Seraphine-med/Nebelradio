@@ -10,8 +10,6 @@ const volumeControl = document.getElementById("volume");
 
 const muteButton = document.getElementById("mute");
 
-const loading = document.getElementById("loading");
-
 
 let playlist = [];
 
@@ -63,14 +61,6 @@ function getDurations(){
             if(loaded === playlist.length){
 
     loadSong();
-
-    loading.style.opacity = "0";
-
-    setTimeout(() => {
-
-        loading.style.display = "none";
-
-    },1000);
 
 }
 
@@ -286,49 +276,4 @@ muteButton.addEventListener("click", function(){
         muteButton.innerHTML = "🔊";
 
     }
-
-    #loading {
-
-    position: fixed;
-    inset: 0;
-
-    background:#090909;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    z-index:1000;
-
-    transition: opacity 1s ease;
-
-}
-
-
-.loading-text {
-
-    color:white;
-
-    text-align:center;
-
-    font-size:32px;
-
-    letter-spacing:8px;
-
-}
-
-
-.loading-text span {
-
-    display:block;
-
-    margin-top:20px;
-
-    font-size:14px;
-
-    letter-spacing:4px;
-
-    color:#999;
-
-}
 });
