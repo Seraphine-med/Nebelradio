@@ -1,19 +1,6 @@
 [
   {
-    "title": "Dreamy Song",
-    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-    "duration": 372
-  },
-
-  {
-    "title": "Night Drive",
-    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
-    "duration": 300
-  },
-
-  {
-    "title": "Morning Coffee",
-    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
-    "duration": 250
+    "title": "Song 1",
+    "url": "music/song1.mp3"
   }
 ]
