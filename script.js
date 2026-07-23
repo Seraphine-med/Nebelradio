@@ -102,11 +102,17 @@ playButton.onclick = function(){
 
 audio.addEventListener("loadedmetadata", function(){
 
-    audio.currentTime = Math.min(position.time, audio.duration);
+    console.log("Délka:", audio.duration);
+    console.log("Skáču na:", position.time);
+
+
+    audio.currentTime = position.time;
+
+
+    console.log("Nastaveno:", audio.currentTime);
+
 
     audio.play();
 
 }, { once: true });
-
-
 };
