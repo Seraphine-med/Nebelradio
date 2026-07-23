@@ -159,36 +159,22 @@ playButton.onclick = function(){
 
 console.log("Vybraná skladba:", currentSong);
 
-audio.src = playlist[currentSong].url;
+console.log("Hraje skladba:", currentSong);
+console.log("Startuji na:", position.time);
 
-audio.onloadedmetadata = function(){
+playCurrentSong(position.time);
+    
+   audio.onended = function(){
 
-    const currentPosition = position.time;
+    const position = getBroadcastPosition();
 
+    if(position){
 
-    console.log("Hraje skladba:", currentSong);
-    console.log("Startuji na:", currentPosition);
+        currentSong = position.songIndex;
 
-
-    audio.currentTime = currentPosition;
-
-
-    audio.play();
-
-};
-    audio.onended = function(){
-
-    currentSong++;
-
-    if(currentSong >= playlist.length){
-
-        currentSong = 0;
+        playCurrentSong(position.time);
 
     }
-
-    loadSong();
-
-    audio.play();
 
 };
 };
