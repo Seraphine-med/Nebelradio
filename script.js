@@ -33,8 +33,6 @@ fetch("playlist.json")
 
 });
 
-
-
 function getDurations(){
 
     let loaded = 0;
@@ -144,4 +142,5 @@ audio.addEventListener("loadedmetadata", function(){
     audio.play();
 
 }, { once: true });
-   
+ 
+};
