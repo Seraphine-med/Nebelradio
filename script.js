@@ -104,15 +104,6 @@ function playCurrentSong(startTime){
         vinyl.classList.add("playing");
 
     };
-audio.ontimeupdate = function(){
-
-    let current = formatTime(audio.currentTime);
-    let duration = formatTime(audio.duration);
-
-    timeText.innerHTML =
-        "Live time: " + current + " / " + duration;
-
-};
     
     audio.ontimeupdate = function(){
 
@@ -171,27 +162,6 @@ let position = elapsed % totalDuration;
         songIndex: 0,
         time: 0
     };
-
-}
-
-function formatTime(seconds){
-
-    if(isNaN(seconds)){
-        return "00:00";
-    }
-
-
-    let min = Math.floor(seconds / 60);
-
-    let sec = Math.floor(seconds % 60);
-
-
-    if(sec < 10){
-        sec = "0" + sec;
-    }
-
-
-    return min + ":" + sec;
 
 }
 
