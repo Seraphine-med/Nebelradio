@@ -189,4 +189,3 @@ playCurrentSong(position.time);
     };
 
 };
-};
