@@ -92,19 +92,32 @@ function getBroadcastPosition(){
     }
 
 
-    const songLength = durations[0];
+    let position = elapsed;
 
 
-    elapsed = elapsed % songLength;
+    for(let i = 0; i < playlist.length; i++){
+
+        if(position < durations[i]){
+
+            return {
+                songIndex: i,
+                time: position
+            };
+
+        }
+
+
+        position -= durations[i];
+
+    }
 
 
     return {
         songIndex: 0,
-        time: elapsed
+        time: 0
     };
 
 }
-
 
 playButton.onclick = function(){
 
