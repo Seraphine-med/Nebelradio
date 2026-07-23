@@ -16,7 +16,7 @@ let durations = [];
 
 // čas začátku vysílání
 
-const broadcastStart = new Date(Date.now() - 10000);
+const broadcastStart = new Date("2026-07-23T18:00:00");
 
 
 // načtení playlistu
@@ -57,7 +57,7 @@ function getBroadcastPosition(){
 
     const now = new Date();
 
-    const elapsed = (now - broadcastStart) / 1000;
+    let elapsed = (now - broadcastStart) / 1000;
 
 
     if(elapsed < 0){
@@ -65,6 +65,12 @@ function getBroadcastPosition(){
         return null;
 
     }
+
+
+    const songLength = durations[0];
+
+
+    elapsed = elapsed % songLength;
 
 
     return {
