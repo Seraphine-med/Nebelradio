@@ -16,7 +16,7 @@ let durations = [];
 
 // čas začátku vysílání
 
-const broadcastStart = new Date(Date.now() - 600000);
+const broadcastStart = new Date(Date.now() - 30000);
 
 
 // načtení playlistu
@@ -55,13 +55,24 @@ function getDurations(){
 
 function getBroadcastPosition(){
 
+    const now = new Date();
+
+    const elapsed = (now - broadcastStart) / 1000;
+
+
+    if(elapsed < 0){
+
+        return null;
+
+    }
+
+
     return {
         songIndex: 0,
-        time: 0
+        time: elapsed
     };
 
 }
-
 
 playButton.onclick = function(){
     return;
@@ -89,7 +100,7 @@ playButton.onclick = function(){
     loadSong();
 
 
-    audio.currentTime = position.time;
+    audio.currentTime = Math.min(position.time, audio.duration);
 
 
     audio.play();
