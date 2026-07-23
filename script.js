@@ -23,9 +23,7 @@ let durations = [];
 
 
 // čas začátku vysílání
-const broadcastStart = new Date(Date.now() - 10000);
-
-// načtení playlistu
+const broadcastStart = new Date("2026-07-23T23:30:00");
 
 fetch("playlist.json")
 
