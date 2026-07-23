@@ -80,8 +80,6 @@ audio.load();
 
 function playCurrentSong(startTime){
 
-    loadSong();
-
     audio.onloadedmetadata = function(){
 
         console.log("Audio načteno");
@@ -91,16 +89,16 @@ function playCurrentSong(startTime){
         audio.currentTime = Math.min(startTime, audio.duration - 0.1);
 
         audio.play()
-.then(() => {
+        .then(() => {
 
-    console.log("Přehrávání spuštěno");
+            console.log("Přehrávání spuštěno");
 
-})
-.catch(error => {
+        })
+        .catch(error => {
 
-    console.log("Chyba play:", error.name, error.message);
+            console.log("Chyba play:", error.name, error.message);
 
-});
+        });
 
     };
 
@@ -109,6 +107,8 @@ function playCurrentSong(startTime){
         vinyl.classList.add("playing");
 
     };
+
+    loadSong();
 
 }
 function getBroadcastPosition(){
