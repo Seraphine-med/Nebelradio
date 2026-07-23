@@ -17,6 +17,10 @@ let currentSong = 0;
 const broadcastStart = new Date(Date.now() - 600000);
 
 
+console.log(broadcastStart);
+console.log(new Date());
+
+
 // načtení playlistu
 
 fetch("playlist.json")
