@@ -9,6 +9,7 @@ const timeText = document.getElementById("time");
 const vinyl = document.querySelector(".vinyl");
 
 const volumeControl = document.getElementById("volume");
+console.log(volumeControl);
 
 
 let playlist = [];
