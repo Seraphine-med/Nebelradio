@@ -69,3 +69,34 @@ button:hover {
 margin:30px auto;
 
 }
+.center-label{
+    width:70px;
+    height:70px;
+    background:#8b5cf6;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    font-size:22px;
+    color:white;
+    margin:75px auto;
+    box-shadow:0 0 20px rgba(139,92,246,.6);
+}
+@keyframes spin{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+.vinyl.playing{
+
+    animation:spin 4s linear infinite;
+
+}
