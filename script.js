@@ -74,6 +74,7 @@ function getBroadcastPosition(){
 
 }
 
+
 playButton.onclick = function(){
 
     const position = getBroadcastPosition();
