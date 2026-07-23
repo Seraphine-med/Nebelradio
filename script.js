@@ -85,13 +85,15 @@ function playCurrentSong(startTime){
 
         audio.currentTime = Math.min(startTime, audio.duration - 0.1);
 
-       audio.play();
+        audio.play();
 
-audio.onplay = function(){
+    };
 
-    vinyl.classList.add("playing");
+    audio.onplay = function(){
 
-};
+        vinyl.classList.add("playing");
+
+    };
 
 }
 function getBroadcastPosition(){
