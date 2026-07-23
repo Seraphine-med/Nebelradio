@@ -6,6 +6,8 @@ const songText = document.getElementById("song");
 
 const timeText = document.getElementById("time");
 
+const vinyl = document.querySelector(".vinyl");
+
 
 let playlist = [];
 
@@ -83,7 +85,9 @@ function playCurrentSong(startTime){
 
         audio.currentTime = Math.min(startTime, audio.duration - 0.1);
 
-        audio.play();
+       audio.play();
+
+vinyl.classList.add("playing");
 
     };
 
@@ -164,7 +168,8 @@ playButton.onclick = function(){
 
 playCurrentSong(position.time);
     
-   audio.onended = function(){
+  vinyl.classList.remove("playing");
+    audio.onended = function(){
 
     const position = getBroadcastPosition();
 
