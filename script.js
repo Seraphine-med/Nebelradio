@@ -58,7 +58,11 @@ function getDurations(){
 
                 loadSong();
 
+            }
+
         });
+
+    });
 
 }
 
