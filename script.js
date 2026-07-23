@@ -90,16 +90,16 @@ function playCurrentSong(startTime){
         audio.currentTime = Math.min(startTime, audio.duration - 0.1);
 
         audio.play()
-        .then(() => {
+.then(() => {
 
-            console.log("Přehrávání spuštěno");
+    console.log("Přehrávání spuštěno");
 
-        })
-        .catch(error => {
+})
+.catch(error => {
 
-            console.log("Chyba play:", error);
+    console.log("Chyba play:", error.name, error.message);
 
-        });
+});
 
     };
 
@@ -181,9 +181,13 @@ playButton.onclick = function(){
     }
 
 
-     currentSong = position.songIndex;
+    currentSong = position.songIndex;
 
-    playCurrentSong(position.time);
+console.log("Klik tlačítko");
+console.log("Skladba:", currentSong);
+console.log("Čas:", position.time);
+
+playCurrentSong(position.time);
 
 
     audio.onended = function(){
