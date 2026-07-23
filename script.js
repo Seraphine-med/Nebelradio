@@ -99,12 +99,14 @@ function getBroadcastPosition(){
 
         if(position < durations[i]){
 
-            return {
-                songIndex: i,
-                time: position
-            };
+    console.log("Hraje skladba:", i, "čas:", position);
 
-        }
+    return {
+        songIndex: i,
+        time: position
+    };
+
+}
 
 
         position -= durations[i];
