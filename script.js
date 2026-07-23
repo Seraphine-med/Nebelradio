@@ -145,9 +145,9 @@ playButton.onclick = function(){
 
    currentSong = position.songIndex;
 
+console.log("Vybraná skladba:", currentSong);
 
 audio.src = playlist[currentSong].url;
-
 
 audio.onloadedmetadata = function(){
 
