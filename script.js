@@ -9,7 +9,6 @@ const timeText = document.getElementById("time");
 const vinyl = document.querySelector(".vinyl");
 
 const volumeControl = document.getElementById("volume");
-console.log(volumeControl);
 
 
 let playlist = [];
@@ -112,7 +111,16 @@ function playCurrentSong(startTime){
         vinyl.classList.add("playing");
 
     };
+audio.ontimeupdate = function(){
 
+    let current = formatTime(audio.currentTime);
+    let duration = formatTime(audio.duration);
+
+    timeText.innerHTML =
+        "Live time: " + current + " / " + duration;
+
+};
+    
     audio.ontimeupdate = function(){
 
     let current = formatTime(audio.currentTime);
@@ -191,6 +199,26 @@ function formatTime(seconds){
 
 
     return min + ":" + sec;
+
+}
+
+function formatTime(seconds){
+
+    if(isNaN(seconds)){
+        return "00:00";
+    }
+
+    let minutes = Math.floor(seconds / 60);
+
+    let secondsLeft = Math.floor(seconds % 60);
+
+
+    if(secondsLeft < 10){
+        secondsLeft = "0" + secondsLeft;
+    }
+
+
+    return minutes + ":" + secondsLeft;
 
 }
 
