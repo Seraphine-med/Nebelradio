@@ -15,8 +15,7 @@ let durations = [];
 
 
 // čas začátku vysílání
-
-const broadcastStart = new Date("2026-07-23T18:00:00");
+const broadcastStart = new Date(Date.now() - 10000);
 
 
 // načtení playlistu
@@ -125,20 +124,9 @@ playButton.onclick = function(){
 
         return;
 
-    }
+  audio.addEventListener("loadedmetadata", function(){
 
-
-    currentSong = position.songIndex;
-
-loadSong();
-
-
-audio.addEventListener("loadedmetadata", function(){
-
-    const now = new Date();
-
-    const currentPosition = ((now - broadcastStart) / 1000) % audio.duration;
-
+    const currentPosition = position.time;
 
     console.log("Startuji na:", currentPosition);
 
@@ -149,5 +137,7 @@ audio.addEventListener("loadedmetadata", function(){
     audio.play();
 
 }, { once: true });
- 
 };
+
+
+    
