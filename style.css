@@ -101,3 +101,19 @@ button:hover {
     animation:spin 4s linear infinite;
 
 }
+.volume {
+
+    margin-top:25px;
+
+}
+
+
+#volume {
+
+    width:200px;
+
+    cursor:pointer;
+
+    accent-color:#8b5cf6;
+
+}
