@@ -1,0 +1,41 @@
+body {
+
+margin:0;
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:#151515;
+
+color:white;
+
+font-family:Georgia, serif;
+
+}
+
+
+.radio {
+
+text-align:center;
+
+}
+
+
+.vinyl {
+
+width:220px;
+
+height:220px;
+
+border-radius:50%;
+
+background:black;
+
+margin:30px auto;
+
+}
