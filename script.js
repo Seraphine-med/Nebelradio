@@ -37,18 +37,28 @@ fetch("playlist.json")
 
 function getDurations(){
 
-    let audioTest = new Audio();
-
-    audioTest.src = playlist[0].url;
+    let loaded = 0;
 
 
-    audioTest.addEventListener("loadedmetadata", function(){
+    playlist.forEach((song, index) => {
 
-        durations[0] = audioTest.duration;
+        let audioTest = new Audio();
 
-        loadSong();
+        audioTest.src = song.url;
 
-    });
+
+        audioTest.addEventListener("loadedmetadata", function(){
+
+            durations[index] = audioTest.duration;
+
+            loaded++;
+
+
+            if(loaded === playlist.length){
+
+                loadSong();
+
+        });
 
 }
 
