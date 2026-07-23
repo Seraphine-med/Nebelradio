@@ -2,8 +2,6 @@ const audio = document.getElementById("audio");
 
 const playButton = document.getElementById("play");
 
-const songText = document.getElementById("song");
-
 const timeText = document.getElementById("time");
 
 const vinyl = document.querySelector(".vinyl");
@@ -75,11 +73,6 @@ function loadSong(){
     audio.src = song.url;
 audio.load();
     
-    songText.innerHTML =
-        "Now playing: <strong>" +
-        song.title +
-        "</strong>";
-
 }
 
 function playCurrentSong(startTime){
