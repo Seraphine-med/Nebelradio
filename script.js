@@ -106,41 +106,4 @@ playButton.onclick = function(){
 
 };
 
-    const position = getBroadcastPosition();
-    return {
-    songIndex: 0,
-    time: 0
-};
-
-
-    if(position === null){
-
-        alert("Vysílání ještě nezačalo.");
-
-        return;
-
-    }
-
-
-    currentSong = position.songIndex;
-
-
-    loadSong();
-
-
-audio.addEventListener("loadedmetadata", function(){
-
-    console.log("Délka:", audio.duration);
-    console.log("Skáču na:", position.time);
-
-
-    audio.currentTime = position.time;
-
-
-    console.log("Nastaveno:", audio.currentTime);
-
-
-    audio.play();
-
-}, { once: true });
-};
+   
