@@ -59,9 +59,14 @@ function getBroadcastPosition(){
 
 
 playButton.onclick = function(){
-
+    return;
+}
 
     const position = getBroadcastPosition();
+    return {
+    songIndex: 0,
+    time: 0
+};
 
 
     if(position === null){
