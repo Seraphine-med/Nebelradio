@@ -1,5 +1,3 @@
-alert("NEBEL RADIO nový JS");
-
 const audio = document.getElementById("audio");
 
 const playButton = document.getElementById("play");
