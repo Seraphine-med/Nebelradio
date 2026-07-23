@@ -16,7 +16,7 @@ let durations = [];
 
 // čas začátku vysílání
 
-const broadcastStart = new Date(Date.now() - 120000);
+const broadcastStart = new Date(Date.now() - 10000);
 
 
 // načtení playlistu
