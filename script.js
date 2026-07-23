@@ -63,12 +63,7 @@ function getDurations(){
 }
 
 function loadSong(){
-songText.innerHTML =
-"Now playing: <strong>"
-+
-playlist[currentSong].title
-+
-"</strong>";
+
     audio.src = playlist[currentSong].url;
 
 
@@ -168,4 +163,5 @@ audio.onloadedmetadata = function(){
 
     audio.play();
 
+};
 };
