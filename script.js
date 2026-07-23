@@ -170,19 +170,21 @@ playButton.onclick = function(){
 
 playCurrentSong(position.time);
     
-    audio.onended = function(){
+       audio.onended = function(){
 
-    vinyl.classList.remove("playing");
+        vinyl.classList.remove("playing");
 
-    const position = getBroadcastPosition();
+        const position = getBroadcastPosition();
 
-    if(position){
+        if(position){
 
-        currentSong = position.songIndex;
+            currentSong = position.songIndex;
 
-        playCurrentSong(position.time);
+            playCurrentSong(position.time);
 
-    }
+        }
+
+    };
 
 };
 };
