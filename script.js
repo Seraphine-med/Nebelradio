@@ -69,7 +69,8 @@ function loadSong(){
     const song = playlist[currentSong];
 
     audio.src = song.url;
-
+audio.load();
+    
     songText.innerHTML =
         "Now playing: <strong>" +
         song.title +
