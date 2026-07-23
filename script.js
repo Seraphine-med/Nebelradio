@@ -92,16 +92,21 @@ playButton.onclick = function(){
     currentSong = position.songIndex;
 
 
-    loadSong();
+    audio.src = playlist[currentSong].url;
 
 
-    audio.addEventListener("loadedmetadata", function(){
+audio.addEventListener("loadedmetadata", function(){
 
-        audio.currentTime = Math.min(position.time, audio.duration);
+    console.log("Délka:", audio.duration);
+    console.log("Startuji na:", position.time);
 
-        audio.play();
 
-    }, { once: true });
+    audio.currentTime = Math.min(position.time, audio.duration - 1);
+
+
+    audio.play();
+
+}, { once: true });
 
 
 };
