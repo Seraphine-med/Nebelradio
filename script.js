@@ -76,7 +76,19 @@ function loadSong(){
 
 }
 
+function playCurrentSong(startTime){
 
+    loadSong();
+
+    audio.onloadedmetadata = function(){
+
+        audio.currentTime = Math.min(startTime, audio.duration - 0.1);
+
+        audio.play();
+
+    };
+
+}
 function getBroadcastPosition(){
 
     const now = new Date();
