@@ -27,10 +27,11 @@ fetch("playlist.json")
 
     playlist = data;
 
+    console.log("Playlist:", playlist);
+
     getDurations();
 
 });
-
 function getDurations(){
 
     let loaded = 0;
