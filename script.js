@@ -8,10 +8,14 @@ const timeText = document.getElementById("time");
 
 const vinyl = document.querySelector(".vinyl");
 
+const volumeControl = document.getElementById("volume");
+
 
 let playlist = [];
 
 let currentSong = 0;
+
+audio.volume = 0.7;
 
 let durations = [];
 
@@ -206,3 +210,8 @@ playCurrentSong(position.time);
     };
 
 };
+volumeControl.addEventListener("input", function(){
+
+    audio.volume = this.value;
+
+});
