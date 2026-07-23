@@ -11,6 +11,8 @@ let playlist = [];
 
 let currentSong = 0;
 
+let durations = [];
+
 
 // čas začátku vysílání
 
@@ -27,23 +29,26 @@ fetch("playlist.json")
 
     playlist = data;
 
-    loadSong();
+    getDurations();
 
 });
 
 
 
-function loadSong(){
+function getDurations(){
 
-    audio.src = playlist[currentSong].url;
+    let audioTest = new Audio();
+
+    audioTest.src = playlist[0].url;
 
 
-    songText.innerHTML =
-    "Now playing: <strong>"
-    +
-    playlist[currentSong].title
-    +
-    "</strong>";
+    audioTest.addEventListener("loadedmetadata", function(){
+
+        durations[0] = audioTest.duration;
+
+        loadSong();
+
+    });
 
 }
 
