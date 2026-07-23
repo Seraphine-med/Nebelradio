@@ -27,7 +27,6 @@ fetch("playlist.json")
 
     playlist = data;
 
-    console.log("Playlist:", playlist);
 
     getDurations();
 
@@ -103,14 +102,15 @@ function getBroadcastPosition(){
     }
 
 
-    let position = elapsed;
+   const totalDuration =
+    durations.reduce((sum, duration) => sum + duration, 0);
+
+let position = elapsed % totalDuration;
 
 
     for(let i = 0; i < playlist.length; i++){
 
         if(position < durations[i]){
-
-    console.log("Hraje skladba:", i, "čas:", position);
 
     return {
         songIndex: i,
@@ -157,10 +157,6 @@ playButton.onclick = function(){
 
    currentSong = position.songIndex;
 
-console.log("Vybraná skladba:", currentSong);
-
-console.log("Hraje skladba:", currentSong);
-console.log("Startuji na:", position.time);
 
 playCurrentSong(position.time);
     
