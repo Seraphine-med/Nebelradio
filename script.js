@@ -87,9 +87,11 @@ function playCurrentSong(startTime){
 
        audio.play();
 
-vinyl.classList.add("playing");
+audio.onplay = function(){
 
-    };
+    vinyl.classList.add("playing");
+
+};
 
 }
 function getBroadcastPosition(){
@@ -168,8 +170,9 @@ playButton.onclick = function(){
 
 playCurrentSong(position.time);
     
-  vinyl.classList.remove("playing");
     audio.onended = function(){
+
+    vinyl.classList.remove("playing");
 
     const position = getBroadcastPosition();
 
