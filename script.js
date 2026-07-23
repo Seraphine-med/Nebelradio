@@ -110,11 +110,13 @@ playButton.onclick = function(){
 
     if(durations.length === 0){
 
-    alert("Rádio se ještě načítá, zkus to za chvíli.");
+        alert("Rádio se ještě načítá, zkus to za chvíli.");
 
-    return;
+        return;
 
-}
+    }
+
+
     const position = getBroadcastPosition();
 
 
@@ -124,20 +126,30 @@ playButton.onclick = function(){
 
         return;
 
-  audio.addEventListener("loadedmetadata", function(){
-
-    const currentPosition = position.time;
-
-    console.log("Startuji na:", currentPosition);
+    }
 
 
-    audio.currentTime = currentPosition;
+    currentSong = position.songIndex;
 
 
-    audio.play();
+    loadSong();
 
-}, { once: true });
+
+    audio.addEventListener("loadedmetadata", function(){
+
+        const currentPosition = position.time;
+
+
+        console.log("Startuji na:", currentPosition);
+
+
+        audio.currentTime = currentPosition;
+
+
+        audio.play();
+
+
+    }, { once: true });
+
+
 };
-
-
-    
