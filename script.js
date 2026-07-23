@@ -63,7 +63,12 @@ function getDurations(){
 }
 
 function loadSong(){
-
+songText.innerHTML =
+"Now playing: <strong>"
++
+playlist[currentSong].title
++
+"</strong>";
     audio.src = playlist[currentSong].url;
 
 
@@ -143,25 +148,24 @@ playButton.onclick = function(){
     }
 
 
-    currentSong = position.songIndex;
+   currentSong = position.songIndex;
 
 
-    audio.src = playlist[currentSong].url;
+audio.src = playlist[currentSong].url;
 
 
-    audio.onloadedmetadata = function(){
+audio.onloadedmetadata = function(){
 
-        const currentPosition = position.time;
-
-
-        console.log("Startuji na:", currentPosition);
+    const currentPosition = position.time;
 
 
-        audio.currentTime = currentPosition;
+    console.log("Hraje skladba:", currentSong);
+    console.log("Startuji na:", currentPosition);
 
 
-        audio.play();
+    audio.currentTime = currentPosition;
 
-    };
+
+    audio.play();
 
 };
