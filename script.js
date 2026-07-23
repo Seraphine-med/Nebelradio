@@ -51,17 +51,12 @@ function loadSong(){
 
 function getBroadcastPosition(){
 
-    const now = new Date();
+    return {
+        songIndex: 0,
+        time: 0
+    };
 
-    let elapsed =
-    (now - broadcastStart) / 1000;
-
-
-    if(elapsed < 0){
-
-        return null;
-
-    }
+}
 
 
     let position = elapsed;
