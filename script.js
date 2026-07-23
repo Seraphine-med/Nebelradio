@@ -52,6 +52,20 @@ function getDurations(){
 
 }
 
+function loadSong(){
+
+    audio.src = playlist[currentSong].url;
+
+
+    songText.innerHTML =
+    "Now playing: <strong>"
+    +
+    playlist[currentSong].title
+    +
+    "</strong>";
+
+}
+
 
 function getBroadcastPosition(){
 
