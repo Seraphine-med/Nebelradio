@@ -1,3 +1,5 @@
+alert("NEBEL RADIO JS funguje");
+
 const audio = document.getElementById("audio");
 
 const playButton = document.getElementById("play");
