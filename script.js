@@ -7,6 +7,7 @@ const timeText = document.getElementById("time");
 const vinyl = document.querySelector(".vinyl");
 
 const volumeControl = document.getElementById("volume");
+const muteButton = document.getElementById("mute");
 
 
 let playlist = [];
@@ -235,5 +236,31 @@ playCurrentSong(position.time);
 volumeControl.addEventListener("input", function(){
 
     audio.volume = this.value;
+
+});
+let previousVolume = 0.7;
+
+
+muteButton.addEventListener("click", function(){
+
+    if(audio.volume > 0){
+
+        previousVolume = audio.volume;
+
+        audio.volume = 0;
+
+        volumeControl.value = 0;
+
+        muteButton.innerHTML = "🔇";
+
+    } else {
+
+        audio.volume = previousVolume;
+
+        volumeControl.value = previousVolume;
+
+        muteButton.innerHTML = "🔊";
+
+    }
 
 });
