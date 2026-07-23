@@ -102,8 +102,12 @@ function getBroadcastPosition(){
     }
 
 
-   const totalDuration =
+  const totalDuration =
     durations.reduce((sum, duration) => sum + duration, 0);
+
+if (totalDuration === 0) {
+    return null;
+}
 
 let position = elapsed % totalDuration;
 
