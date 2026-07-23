@@ -116,18 +116,18 @@ loadSong();
 
 audio.addEventListener("loadedmetadata", function(){
 
-    console.log("Délka:", audio.duration);
-    console.log("Startuji na:", position.time);
+    const now = new Date();
+
+    const currentPosition = ((now - broadcastStart) / 1000) % audio.duration;
 
 
-    audio.currentTime = Math.min(position.time, audio.duration - 1);
+    console.log("Startuji na:", currentPosition);
+
+
+    audio.currentTime = currentPosition;
 
 
     audio.play();
 
 }, { once: true });
-
-
-};
-
    
