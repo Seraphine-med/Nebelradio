@@ -16,6 +16,8 @@ let currentSong = 0;
 
 audio.volume = 0.7;
 
+volumeControl.value = 0.7;
+
 let durations = [];
 
 
@@ -236,6 +238,17 @@ playCurrentSong(position.time);
 volumeControl.addEventListener("input", function(){
 
     audio.volume = this.value;
+
+
+    if(audio.volume > 0){
+
+        muteButton.innerHTML = "🔊";
+
+    } else {
+
+        muteButton.innerHTML = "🔇";
+
+    }
 
 });
 let previousVolume = 0.7;
