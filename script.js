@@ -14,7 +14,7 @@ let currentSong = 0;
 
 // čas začátku vysílání
 
-const broadcastStart = new Date("2026-07-23T17:50:00");
+const broadcastStart = new Date("2026-07-23T17:55:00");
 
 
 
