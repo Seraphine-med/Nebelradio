@@ -132,10 +132,10 @@ playButton.onclick = function(){
     currentSong = position.songIndex;
 
 
-    loadSong();
+    audio.src = playlist[currentSong].url;
 
 
-    audio.addEventListener("loadedmetadata", function(){
+    audio.onloadedmetadata = function(){
 
         const currentPosition = position.time;
 
@@ -148,8 +148,6 @@ playButton.onclick = function(){
 
         audio.play();
 
-
-    }, { once: true });
-
+    };
 
 };
