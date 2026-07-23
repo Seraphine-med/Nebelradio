@@ -65,15 +65,14 @@ function getDurations(){
 
 function loadSong(){
 
-    audio.src = playlist[currentSong].url;
+    const song = playlist[currentSong];
 
+    audio.src = song.url;
 
     songText.innerHTML =
-    "Now playing: <strong>"
-    +
-    playlist[currentSong].title
-    +
-    "</strong>";
+        "Now playing: <strong>" +
+        song.title +
+        "</strong>";
 
 }
 
