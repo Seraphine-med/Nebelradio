@@ -16,7 +16,7 @@ let durations = [];
 
 // čas začátku vysílání
 
-const broadcastStart = new Date(Date.now() - 30000);
+const broadcastStart = new Date(Date.now() - 120000);
 
 
 // načtení playlistu
@@ -75,8 +75,35 @@ function getBroadcastPosition(){
 }
 
 playButton.onclick = function(){
-    return;
-}
+
+    const position = getBroadcastPosition();
+
+
+    if(position === null){
+
+        alert("Vysílání ještě nezačalo.");
+
+        return;
+
+    }
+
+
+    currentSong = position.songIndex;
+
+
+    loadSong();
+
+
+    audio.addEventListener("loadedmetadata", function(){
+
+        audio.currentTime = Math.min(position.time, audio.duration);
+
+        audio.play();
+
+    }, { once: true });
+
+
+};
 
     const position = getBroadcastPosition();
     return {
