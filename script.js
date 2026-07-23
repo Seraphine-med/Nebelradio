@@ -100,10 +100,13 @@ playButton.onclick = function(){
     loadSong();
 
 
+audio.addEventListener("loadedmetadata", function(){
+
     audio.currentTime = Math.min(position.time, audio.duration);
 
-
     audio.play();
+
+}, { once: true });
 
 
 };
