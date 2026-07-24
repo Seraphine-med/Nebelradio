@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html lang="cs">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NEBEL RADIO</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body data-start="2026-07-24T08:25:00">
+
+<div class="radio">
+
+<h1>NEBEL RADIO</h1>
+
+<div class="onair">
+🔴 ON AIR
+</div>
+
+
+<div class="vinyl">
+    <div class="center-label">NR</div>
+</div>
+
+
+<audio id="audio"></audio>
+
+  
+<button id="play">
+📻 LISTEN LIVE
+</button>
+
+<div class="volume-control">
+
+    <button id="mute">
+        🔊
+    </button>
+
+    <input 
+        type="range" 
+        id="volume"
+        min="0"
+        max="1"
+        step="0.01"
+        value="0.7"
+    >
+
+</div>
+
+<p id="time">
+Live time: --
+</p>
+
+
+</div>
+
+
+<script src="assets/script.js"></script>
+
+</body>
+
+</html>
