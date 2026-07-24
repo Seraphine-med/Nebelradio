@@ -33,20 +33,18 @@ h1 {
 
 /* --- Karta s přehrávačem --- */
 .player-card {
-    position: relative;
-    margin-top: 80px;
+    margin-top: 25px;
     background: rgba(255,255,255,.35);
     border-radius: 20px;
-    padding: 90px 20px 24px;
+    padding: 24px 20px;
 }
 
 .vinyl-wrapper {
-    position: absolute;
-    top: -70px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
 }
-
 .vinyl {
     width: 160px;
     height: 160px;
@@ -94,8 +92,8 @@ radial-gradient(circle,
 /* Play/pause tlačítko přes roh vinylu */
 .play-btn {
     position: absolute;
-    bottom: -6px;
-    right: -6px;
+    bottom: 4px;
+    right: calc(50% - 90px); /* posune tlačítko na pravý spodní okraj vinylu */
     width: 54px;
     height: 54px;
     border-radius: 50%;
@@ -199,7 +197,6 @@ button {
         height: 130px;
     }
     .vinyl-wrapper {
-        top: -55px;
     }
     .center-label {
         width: 48px;
@@ -207,6 +204,7 @@ button {
         font-size: 12px;
     }
     .play-btn {
+        right: calc(50% - 75px); /* přepočítáno pro menší vinyl (130px) */
         width: 46px;
         height: 46px;
         font-size: 17px;
