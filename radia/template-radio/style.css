@@ -1,0 +1,171 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+radial-gradient(circle at top,
+#fff8df 0%,
+#f5e3a5 30%,
+#d8b45c 70%,
+#8c6b20 100%);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.radio{
+
+background:rgba(255,248,220,.85);
+
+border:3px solid #d4af37;
+
+box-shadow:
+0 0 40px rgba(212,175,55,.45);
+
+}
+h1 {
+    margin: 0;
+    font-size: 42px;
+    letter-spacing: 6px;
+    font-weight: 700;
+}
+
+.vinyl {
+    width: 220px;
+    height: 220px;
+    margin: 35px auto;
+    border-radius: 50%;
+    background:
+radial-gradient(circle,
+#fff7c7 0%,
+#f8d56b 20%,
+#d4af37 55%,
+#8a6a15 100%);
+    box-shadow:
+        0 0 25px rgba(0,0,0,.6),
+        inset 0 0 25px rgba(255,255,255,.08);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+button {
+    background:#f2d87a;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 30px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+button:hover {
+    background: #a855f7;
+    transform: scale(1.05);
+}
+
+#song {
+    margin-top: 25px;
+    color: #d7d7d7;
+}
+
+#time {
+    margin-top: 10px;
+    color: #999;
+    font-size: 14px;
+}
+.center-label{
+    width:70px;
+    height:70px;
+    background:#8b5cf6;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    font-size:22px;
+    color:white;
+    box-shadow:0 0 20px rgba(139,92,246,.6);
+}
+@keyframes spin{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+.vinyl.playing{
+
+    /* update */
+
+    animation:spin 4s linear infinite;
+
+}
+.volume {
+
+    margin-top:25px;
+
+}
+
+
+#volume {
+
+    width:200px;
+
+    cursor:pointer;
+
+    accent-color:#8b5cf6;
+
+}
+
+/* 📱 Mobile version */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .radio {
+        width: 100%;
+        max-width: 330px;
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+
+    h1 {
+        font-size: 32px;
+        letter-spacing: 4px;
+    }
+
+    .vinyl {
+        width: 180px;
+        height: 180px;
+        margin: 30px auto;
+    }
+
+    .center-label {
+        width: 55px;
+        height: 55px;
+        margin: 62px auto;
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 15px;
+        padding: 12px 25px;
+    }
+
+    #volume {
+        width: 180px;
+    }
+
+}
