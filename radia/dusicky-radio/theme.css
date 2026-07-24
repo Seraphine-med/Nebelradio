@@ -1,1 +1,46 @@
+/* 🕯️ Dušičky – barevné téma */
 
+/* Jemně namodralo-fialový nádech karty místo čistě bílé, ať ladí s večerní/mlhavou scénou */
+.radio {
+    background: rgba(30, 35, 55, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.player-card {
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+h1 {
+    color: #f3e9d2; /* teplá barva jako světlo svíčky */
+    text-shadow: 0 0 12px rgba(255, 200, 120, 0.5), 0 2px 10px rgba(0,0,0,.5);
+    font-weight: 400;
+    letter-spacing: 8px;
+}
+
+#song-name {
+    color: #f3e9d2;
+}
+
+/* Progress bar – bílý s jemnou září */
+.progress-bar {
+    background: rgba(255, 255, 255, 0.18);
+}
+.progress-fill {
+    background: #ffffff;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.9), 0 0 16px rgba(255, 255, 255, 0.5);
+}
+.time-labels {
+    color: #f3e9d2;
+    text-shadow: 0 1px 6px rgba(0,0,0,.4);
+}
+
+/* Volume slider – bílý */
+#volume {
+    accent-color: #ffffff;
+}
+
+#mute {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f3e9d2;
+}
