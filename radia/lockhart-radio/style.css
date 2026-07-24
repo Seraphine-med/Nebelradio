@@ -1,54 +1,44 @@
 body {
+
     margin: 0;
+
     min-height: 100vh;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
+    font-family: Georgia, serif;
+
     background:
-radial-gradient(circle at top,
-#fff8df 0%,
-#f5e3a5 30%,
-#d8b45c 70%,
-#8c6b20 100%);
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.radio{
-
-background:rgba(255,248,220,.85);
-
-border:3px solid #d4af37;
-
-box-shadow:
-0 0 40px rgba(212,175,55,.45);
+    radial-gradient(circle at top, #fff4c2, #d4a017);
 
 }
-h1 {
-    margin: 0;
-    font-size: 42px;
-    letter-spacing: 6px;
-    font-weight: 700;
-}
 
-.vinyl {
-    width: 220px;
-    height: 220px;
-    margin: 35px auto;
-    border-radius: 50%;
+.radio {
+
+    width: 350px;
+
+    padding: 35px;
+
+    text-align: center;
+
     background:
-radial-gradient(circle,
-#fff7c7 0%,
-#f8d56b 20%,
-#d4af37 55%,
-#8a6a15 100%);
+    linear-gradient(
+        145deg,
+        #fff7d6,
+        #f7d46a
+    );
+
+    border-radius: 25px;
+
+    border: 3px solid #b8860b;
+
     box-shadow:
-        0 0 25px rgba(0,0,0,.6),
-        inset 0 0 25px rgba(255,255,255,.08);
+    0 0 30px rgba(184,134,11,0.7);
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
 }
 
 button {
@@ -142,9 +132,17 @@ button:hover {
     }
 
     h1 {
-        font-size: 32px;
-        letter-spacing: 4px;
-    }
+
+    color: #8b005d;
+
+    font-size: 36px;
+
+    letter-spacing: 5px;
+
+    text-shadow:
+    2px 2px #ffd700;
+
+}
 
     .vinyl {
         width: 180px;
