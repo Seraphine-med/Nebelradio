@@ -4,55 +4,153 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background:
-radial-gradient(circle at top,
-#fff8df 0%,
-#f5e3a5 30%,
-#d8b45c 70%,
-#8c6b20 100%);
-    color: white;
     font-family: Arial, Helvetica, sans-serif;
+
+    /* 👉 sem si vlož svůj vlastní obrázek na pozadí */
+background: #2b2b2b;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .radio{
-
-background:rgba(255,248,220,.85);
-
-border:3px solid #d4af37;
-
-box-shadow:
-0 0 40px rgba(212,175,55,.45);
-
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 24px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    padding: 30px;
+    width: 320px;
+    text-align: center;
 }
+
 h1 {
     margin: 0;
     font-size: 42px;
     letter-spacing: 6px;
     font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 2px 12px rgba(0,0,0,.35);
 }
 
+/* --- Karta s přehrávačem --- */
+.player-card {
+    margin-top: 25px;
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    padding: 24px 20px;
+}
+
+.vinyl-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+/* --- Realistická černá vinylová deska --- */
 .vinyl {
-    width: 220px;
-    height: 220px;
-    margin: 35px auto;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     background:
-radial-gradient(circle,
-#fff7c7 0%,
-#f8d56b 20%,
-#d4af37 55%,
-#8a6a15 100%);
+        repeating-radial-gradient(
+            circle at center,
+            #050505 0px,
+            #050505 3px,
+            #161616 4px,
+            #050505 5px
+        );
     box-shadow:
-        0 0 25px rgba(0,0,0,.6),
-        inset 0 0 25px rgba(255,255,255,.08);
-
+        0 10px 25px rgba(0,0,0,.5),
+        inset 0 0 15px rgba(0,0,0,.7);
     display:flex;
     justify-content:center;
     align-items:center;
 }
 
+/* Bílý label uprostřed desky + malá dírka */
+.center-label{
+    width: 62px;
+    height: 62px;
+    background: #f5f5f5;
+    border-radius: 50%;
+    box-shadow:
+        0 2px 6px rgba(0,0,0,.4),
+        inset 0 0 8px rgba(0,0,0,.08);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.center-label::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: #050505;
+    border-radius: 50%;
+}
+
+/* Play/pause tlačítko jako skleněný prsten */
+.play-btn {
+    position: absolute;
+    bottom: -6px;
+    right: calc(50% - 96px);
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    border: 3px solid rgba(255, 255, 255, 0.85);
+    color: #ffffff;
+    box-shadow:
+        0 8px 24px rgba(0,0,0,.25),
+        0 0 20px rgba(255,255,255,.35);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size: 26px;
+    padding: 0;
+    padding-left: 4px;
+    cursor: pointer;
+    transition: .25s;
+}
+.play-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.06);
+}
+
+/* Progress linka s časy */
+.progress-container {
+    margin-top: 18px;
+}
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255,255,255,.3);
+    overflow: hidden;
+}
+.progress-fill {
+    height: 100%;
+    width: 0%;
+   background:white;
+    transition: width .2s linear;
+}
+.time-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    font-size: 13px;
+    color: #ffffff;
+    text-shadow: 0 1px 4px rgba(0,0,0,.3);
+}
+
+/* --- Zbytek --- */
 button {
-    background:#f2d87a;
+    background: rgba(255,255,255,.3);
     color: white;
     border: none;
     border-radius: 50px;
@@ -61,111 +159,56 @@ button {
     cursor: pointer;
     transition: .25s;
 }
-
-button:hover {
-    background: #a855f7;
-    transform: scale(1.05);
-}
-
-#song {
-    margin-top: 25px;
-    color: #d7d7d7;
-}
-
-#time {
-    margin-top: 10px;
-    color: #999;
-    font-size: 14px;
-}
-.center-label{
-    width:70px;
-    height:70px;
-    background:#8b5cf6;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-weight:bold;
-    font-size:22px;
-    color:white;
-    box-shadow:0 0 20px rgba(139,92,246,.6);
-}
-@keyframes spin{
-
-    from{
-        transform:rotate(0deg);
-    }
-
-    to{
-        transform:rotate(360deg);
-    }
-
-}
-
-.vinyl.playing{
-
-    /* update */
-
-    animation:spin 4s linear infinite;
-
-}
-.volume {
-
+.volume-control {
     margin-top:25px;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
-
-
+#mute {
+    padding: 8px 14px;
+}
 #volume {
-
     width:200px;
-
     cursor:pointer;
-
-    accent-color:#8b5cf6;
-
+    accent-color:white;
 }
 
 /* 📱 Mobile version */
-
 @media (max-width: 600px) {
-
-    body {
-        padding: 20px;
-    }
-
     .radio {
         width: 100%;
         max-width: 330px;
         padding: 30px 20px;
         border-radius: 20px;
     }
-
     h1 {
         font-size: 32px;
         letter-spacing: 4px;
     }
-
     .vinyl {
-        width: 180px;
-        height: 180px;
-        margin: 30px auto;
+        width: 130px;
+        height: 130px;
     }
 
-    .center-label {
-        width: 55px;
-        height: 55px;
-        margin: 62px auto;
-        font-size: 18px;
+    .center-label{
+    width:45px;
+    height:45px;
+}
+    
+.center-label::after {
+    width: 6px;
+    height: 6px;
+}
+    .play-btn {
+        right: calc(50% - 80px);
+        width: 60px;
+        height: 60px;
+        font-size: 22px;
+        padding-left: 3px;
     }
-
-    button {
-        font-size: 15px;
-        padding: 12px 25px;
-    }
-
     #volume {
         width: 180px;
     }
-
 }
