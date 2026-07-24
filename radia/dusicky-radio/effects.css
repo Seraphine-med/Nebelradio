@@ -77,35 +77,6 @@ body::after {
     75%      { opacity: 0.85; }
 }
 
-/* Malé plovoucí svíčky v rozích obrazovky */
-.radio::before {
-    content: "🕯️";
-    position: fixed;
-    bottom: 4%;
-    left: 6%;
-    font-size: 28px;
-    opacity: 0.55;
-    animation: candleGlow 4s ease-in-out infinite;
-    pointer-events: none;
-    z-index: 1;
-}
-.radio::after {
-    content: "🕯️";
-    position: fixed;
-    bottom: 6%;
-    right: 7%;
-    font-size: 24px;
-    opacity: 0.5;
-    animation: candleGlow 5s ease-in-out infinite reverse;
-    pointer-events: none;
-    z-index: 1;
-}
-
-@keyframes candleGlow {
-    0%, 100% { transform: translateY(0); filter: brightness(1); }
-    50%      { transform: translateY(-4px); filter: brightness(1.3); }
-}
-
 /* 📱 Mobile – jemně zmenšit hustotu listí a svíček */
 @media (max-width: 600px) {
     body::after {
