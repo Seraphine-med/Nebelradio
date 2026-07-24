@@ -59,19 +59,9 @@ function getDurations(){
             loaded++;
 
 
-            if(loaded === playlist.length){
+        if(loaded === playlist.length){
 
-    const position = getBroadcastPosition();
-
-    if(position){
-    currentSong = position.songIndex;
-
-    audio.src = playlist[currentSong].url;
-
-    audio.onloadedmetadata = function(){
-        playCurrentSong(position.time);
-    };
-}
+    console.log("Playlist načten");
 
 }
 
