@@ -23,7 +23,8 @@ let durations = [];
 
 
 // čas začátku vysílání
-const broadcastStart = new Date("2026-07-24T8:20:00");
+const startTime = document.body.dataset.start;
+const broadcastStart = new Date(startTime);
 
 fetch("playlist.json")
 
