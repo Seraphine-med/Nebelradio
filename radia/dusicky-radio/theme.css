@@ -1,3 +1,19 @@
+body {
+    background-image: url("assets/dusickypozadi.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 8, 20, 0.35);
+    z-index: -1;
+}
+
 /* 🕯️ Dušičky – barevné téma */
 
 /* Jemně namodralo-fialový nádech karty místo čistě bílé, ať ladí s večerní/mlhavou scénou */
