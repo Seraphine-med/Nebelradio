@@ -2,13 +2,15 @@ const audio = document.getElementById("audio");
 
 const playButton = document.getElementById("play");
 
-const timeText = document.getElementById("time");
-
 const vinyl = document.querySelector(".vinyl");
 
 const volumeControl = document.getElementById("volume");
 
 const muteButton = document.getElementById("mute");
+
+const progressFill = document.getElementById("progress-fill");
+const currentTimeEl = document.getElementById("current-time");
+const durationTimeEl = document.getElementById("duration-time");
 
 
 let playlist = [];
@@ -105,6 +107,14 @@ function playCurrentSong(startTime){
     audio.onplay = function(){
 
         vinyl.classList.add("playing");
+        playButton.innerHTML = "⏸";
+
+    };
+
+    audio.onpause = function(){
+
+        vinyl.classList.remove("playing");
+        playButton.innerHTML = "▶";
 
     };
     
@@ -113,8 +123,13 @@ function playCurrentSong(startTime){
     let current = formatTime(audio.currentTime);
     let duration = formatTime(audio.duration);
 
-    timeText.innerHTML =
-        "Live time: " + current + " / " + duration;
+    currentTimeEl.textContent = current;
+    durationTimeEl.textContent = duration;
+
+    if(audio.duration){
+        let percent = (audio.currentTime / audio.duration) * 100;
+        progressFill.style.width = percent + "%";
+    }
 
 };
     loadSong();
@@ -190,6 +205,12 @@ function formatTime(seconds){
 }
 
 playButton.onclick = function(){
+
+    // pokud právě hraje, tlačítko funguje jako pauza
+    if(!audio.paused){
+        audio.pause();
+        return;
+    }
 
     if(durations.length === 0){
 
