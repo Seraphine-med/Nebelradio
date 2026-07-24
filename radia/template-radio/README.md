@@ -21,6 +21,7 @@ radia/lockhart-radio/
 ```
 
 zkopíruju z templátu:
+
 index.html 
 
 playlist.json
@@ -31,6 +32,7 @@ v index.html si změním title a h1 podle názvu, jak chci aby se rádio jmenova
 + nová složka: music/.gitkeep
 
 vytvořím nové (prázdné):
+
 effects.css
 
 theme.css
