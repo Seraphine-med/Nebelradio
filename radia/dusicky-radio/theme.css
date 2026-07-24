@@ -107,3 +107,9 @@ h1{
 .flame-inner{
     fill:#fff6a0;
 }
+
+/* kapka vosku */
+.drip{
+    fill:#f5efe3;
+    opacity: 0;
+}
