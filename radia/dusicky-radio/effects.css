@@ -118,3 +118,38 @@ body::after {
         font-size: 18px;
     }
 }
+
+@keyframes candleFlicker {
+
+    0%{
+        transform: rotate(-2deg) scale(1);
+        filter: brightness(1);
+    }
+
+    25%{
+        transform: rotate(1deg) scale(1.03);
+        filter: brightness(1.08);
+    }
+
+    50%{
+        transform: rotate(-1deg) scale(.98);
+        filter: brightness(.95);
+    }
+
+    75%{
+        transform: rotate(2deg) scale(1.02);
+        filter: brightness(1.05);
+    }
+
+    100%{
+        transform: rotate(-2deg) scale(1);
+        filter: brightness(1);
+    }
+
+}
+
+.candle{
+    animation: candleFlicker 2.5s ease-in-out infinite;
+    display:inline-block;
+    transform-origin:center bottom;
+}
