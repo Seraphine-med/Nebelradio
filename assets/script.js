@@ -28,7 +28,7 @@ let durations = [];
 const startTime = document.body.dataset.start;
 const broadcastStart = new Date(startTime);
 
-fetch(`radia/${ACTIVE_RADIO}/playlist.json`)
+fetch("playlist.json")
 
 .then(response => response.json())
 
@@ -75,7 +75,7 @@ function loadSong(){
 
     const song = playlist[currentSong];
 
-    audio.src = `radia/${ACTIVE_RADIO}/${song.url}`;
+    audio.src = song.url;
 audio.load();
     
 }
