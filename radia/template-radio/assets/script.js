@@ -2,13 +2,15 @@ const audio = document.getElementById("audio");
 
 const playButton = document.getElementById("play");
 
-const timeText = document.getElementById("time");
-
 const vinyl = document.querySelector(".vinyl");
 
 const volumeControl = document.getElementById("volume");
 
 const muteButton = document.getElementById("mute");
+
+const progressFill = document.getElementById("progress-fill");
+const currentTimeEl = document.getElementById("current-time");
+const durationTimeEl = document.getElementById("duration-time");
 
 
 let playlist = [];
@@ -18,6 +20,8 @@ let currentSong = 0;
 audio.volume = 0.7;
 
 volumeControl.value = 0.7;
+
+muteButton.innerHTML = "🔊";
 
 let durations = [];
 
@@ -82,7 +86,6 @@ function playCurrentSong(startTime){
 
     audio.onloadedmetadata = function(){
 
-        console.log("Audio načteno");
         console.log("Délka:", audio.duration);
         console.log("Start:", startTime);
 
@@ -105,6 +108,14 @@ function playCurrentSong(startTime){
     audio.onplay = function(){
 
         vinyl.classList.add("playing");
+        playButton.innerHTML = "⏸";
+
+    };
+
+    audio.onpause = function(){
+
+        vinyl.classList.remove("playing");
+        playButton.innerHTML = "▶";
 
     };
     
@@ -113,8 +124,13 @@ function playCurrentSong(startTime){
     let current = formatTime(audio.currentTime);
     let duration = formatTime(audio.duration);
 
-    timeText.innerHTML =
-        "Live time: " + current + " / " + duration;
+    currentTimeEl.textContent = current;
+    durationTimeEl.textContent = duration;
+
+    if(audio.duration){
+        let percent = (audio.currentTime / audio.duration) * 100;
+        progressFill.style.width = percent + "%";
+    }
 
 };
     loadSong();
@@ -126,7 +142,6 @@ function getBroadcastPosition(){
 
     let elapsed = (now - broadcastStart) / 1000;
 
-    console.log("Elapsed:", elapsed);
 
     if(elapsed < 0){
 
@@ -191,6 +206,12 @@ function formatTime(seconds){
 
 playButton.onclick = function(){
 
+    // pokud právě hraje, tlačítko funguje jako pauza
+    if(!audio.paused){
+        audio.pause();
+        return;
+    }
+
     if(durations.length === 0){
 
         alert("Rádio se ještě načítá, zkus to za chvíli.");
@@ -213,10 +234,6 @@ playButton.onclick = function(){
 
 
     currentSong = position.songIndex;
-
-console.log("Klik tlačítko");
-console.log("Skladba:", currentSong);
-console.log("Čas:", position.time);
 
 playCurrentSong(position.time);
 
