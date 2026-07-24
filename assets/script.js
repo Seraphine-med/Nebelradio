@@ -59,9 +59,9 @@ function getDurations(){
             loaded++;
 
 
-        if(loaded === playlist.length){
+            if(loaded === playlist.length){
 
-    console.log("Playlist načten");
+    loadSong();
 
 }
 
@@ -82,56 +82,57 @@ audio.load();
 
 function playCurrentSong(startTime){
 
-    console.log("Audio načteno");
-    console.log("Délka:", audio.duration);
-    console.log("Start:", startTime);
+    audio.onloadedmetadata = function(){
 
-    setTimeout(() => {
+        console.log("Audio načteno");
+        console.log("Délka:", audio.duration);
+        console.log("Start:", startTime);
 
-    audio.currentTime = Math.min(startTime, audio.duration - 0.1);
+        audio.currentTime = Math.min(startTime, audio.duration - 0.1);
 
-    audio.play()
-    .then(() => {
-        console.log("Přehrávání spuštěno");
-    })
-    .catch(error => {
-        console.log("Chyba play:", error.name, error.message);
-    });
+        audio.play()
+        .then(() => {
 
-}, 100);
-        console.log("Přehrávání spuštěno");
-    })
-    .catch(error => {
-        console.log("Chyba play:", error.name, error.message);
-    });
+            console.log("Přehrávání spuštěno");
 
+        })
+        .catch(error => {
+
+            console.log("Chyba play:", error.name, error.message);
+
+        });
+
+    };
 
     audio.onplay = function(){
+
         vinyl.classList.add("playing");
         playButton.innerHTML = "⏸";
-    };
 
+    };
 
     audio.onpause = function(){
+
         vinyl.classList.remove("playing");
         playButton.innerHTML = "▶";
+
     };
-
-
+    
     audio.ontimeupdate = function(){
 
-        let current = formatTime(audio.currentTime);
-        let duration = formatTime(audio.duration);
+    let current = formatTime(audio.currentTime);
+    let duration = formatTime(audio.duration);
 
-        currentTimeEl.textContent = current;
-        durationTimeEl.textContent = duration;
+    currentTimeEl.textContent = current;
+    durationTimeEl.textContent = duration;
 
-        if(audio.duration){
-            let percent = (audio.currentTime / audio.duration) * 100;
-            progressFill.style.width = percent + "%";
-        }
+    if(audio.duration){
+        let percent = (audio.currentTime / audio.duration) * 100;
+        progressFill.style.width = percent + "%";
+    }
 
-    };
+};
+    loadSong();
 
 }
 function getBroadcastPosition(){
@@ -232,19 +233,29 @@ playButton.onclick = function(){
     }
 
 
-   currentSong = position.songIndex;
+    currentSong = position.songIndex;
 
 console.log("Klik tlačítko");
 console.log("Skladba:", currentSong);
 console.log("Čas:", position.time);
 
-audio.src = playlist[currentSong].url;
+playCurrentSong(position.time);
 
-audio.onloadedmetadata = function(){
 
-    playCurrentSong(position.time);
+    audio.onended = function(){
 
-};
+        const position = getBroadcastPosition();
+
+        if(position){
+
+            currentSong = position.songIndex;
+
+            playCurrentSong(position.time);
+
+        }
+
+    };
+
 };
 volumeControl.addEventListener("input", function(){
 
