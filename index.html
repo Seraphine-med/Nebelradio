@@ -51,7 +51,14 @@
         >
     </div>
 </div>
-    <script src="config.js"></script>
+   <script src="config.js"></script>
+
+<script>
+    if (ACTIVE_RADIO !== "template-radio") {
+        window.location.href = `radia/${ACTIVE_RADIO}/index.html`;
+    }
+</script>
+
 <script src="assets/script.js"></script>
 
 </body>
