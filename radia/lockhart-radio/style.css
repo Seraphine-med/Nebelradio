@@ -145,17 +145,57 @@ button:hover {
 }
 
     .vinyl {
-        width: 180px;
-        height: 180px;
-        margin: 30px auto;
-    }
 
+    width: 220px;
+
+    height: 220px;
+
+    margin: 30px auto;
+
+    border-radius: 50%;
+
+    background:
+    radial-gradient(
+        circle,
+        #fff3a6 0%,
+        #d4af37 25%,
+        #b8860b 60%,
+        #704214 100%
+    );
+
+    box-shadow:
+    0 0 25px rgba(255,215,0,0.8);
+
+    position: relative;
+
+}
     .center-label {
-        width: 55px;
-        height: 55px;
-        margin: 62px auto;
-        font-size: 18px;
-    }
+
+    width: 65px;
+
+    height: 65px;
+
+    border-radius: 50%;
+
+    background: #8b005d;
+
+    color: #ffd700;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-weight: bold;
+
+    font-size: 22px;
+
+    margin: 77px auto;
+
+    border: 3px solid #ffd700;
+
+}
 
     button {
         font-size: 15px;
