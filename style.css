@@ -92,27 +92,27 @@ radial-gradient(circle,
 /* Play/pause tlačítko přes roh vinylu */
 .play-btn {
     position: absolute;
-    bottom: 4px;
-    right: calc(50% - 90px); /* posune tlačítko na pravý spodní okraj vinylu */
-    width: 54px;
-    height: 54px;
+    bottom: -6px;
+    right: calc(50% - 96px);
+    width: 76px;
+    height: 76px;
     border-radius: 50%;
-    background: #fff;
-    color: #8a6a15;
-    border: 2px solid #d4af37;
-    box-shadow: 0 6px 16px rgba(0,0,0,.25);
+    background: #ffffff;
+    color: #8b5cf6;
+    border: none;
+    box-shadow: 0 8px 20px rgba(0,0,0,.25);
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size: 20px;
+    font-size: 26px;
     padding: 0;
+    padding-left: 4px; /* opticky vycentruje trojúhelník ▶ */
     cursor: pointer;
     transition: .25s;
 }
 .play-btn:hover {
-    background: #a855f7;
-    color: white;
-    transform: scale(1.08);
+    background: #f5f0ff;
+    transform: scale(1.06);
 }
 
 .song-info {
@@ -204,10 +204,11 @@ button {
         font-size: 12px;
     }
     .play-btn {
-        right: calc(50% - 75px); /* přepočítáno pro menší vinyl (130px) */
-        width: 46px;
-        height: 46px;
-        font-size: 17px;
+        right: calc(50% - 80px);
+        width: 60px;
+        height: 60px;
+        font-size: 22px;
+        padding-left: 3px;
     }
     #volume {
         width: 180px;
