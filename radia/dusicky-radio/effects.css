@@ -191,5 +191,5 @@ opacity:.18;
 }
 
 .drip{
-    animation: waxDrip 60s infinite ease-in;
+    animation: waxDrip 10s infinite ease-in;
 }
