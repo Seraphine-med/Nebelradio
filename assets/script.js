@@ -237,28 +237,56 @@ playButton.onclick = function(){
     }
 
 
-    currentSong = position.songIndex;
+   currentSong = position.songIndex;
 
 console.log("Klik tlačítko");
 console.log("Skladba:", currentSong);
 console.log("Čas:", position.time);
 
-playCurrentSong(position.time);
+audio.src = playlist[currentSong].url;
 
+audio.onloadedmetadata = function(){
 
-    audio.onended = function(){
+    playCurrentSong(position.time);
 
-        const position = getBroadcastPosition();
+};
 
-        if(position){
+    audio.currentTime = Math.min(startTime, audio.duration - 0.1);
 
-            currentSong = position.songIndex;
+    audio.play()
+    .then(() => {
+        console.log("Přehrávání spuštěno");
+    })
+    .catch(error => {
+        console.log("Chyba play:", error.name, error.message);
+    });
 
-            playCurrentSong(position.time);
+    audio.onplay = function(){
+        vinyl.classList.add("playing");
+        playButton.innerHTML = "⏸";
+    };
 
+    audio.onpause = function(){
+        vinyl.classList.remove("playing");
+        playButton.innerHTML = "▶";
+    };
+
+    audio.ontimeupdate = function(){
+
+        let current = formatTime(audio.currentTime);
+        let duration = formatTime(audio.duration);
+
+        currentTimeEl.textContent = current;
+        durationTimeEl.textContent = duration;
+
+        if(audio.duration){
+            let percent = (audio.currentTime / audio.duration) * 100;
+            progressFill.style.width = percent + "%";
         }
 
     };
+
+}
 
 };
 volumeControl.addEventListener("input", function(){
