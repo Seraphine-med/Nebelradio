@@ -1,5 +1,8 @@
+// Aktivní rádio pro návštěvníky webu
 const ACTIVE_RADIO = "dusicky-radio";
 
-// const ACTIVE_RADIO = "template-radio";
-// const ACTIVE_RADIO = "halloween-radio";
-// const ACTIVE_RADIO = "lockhart-radio";
+// Dostupná rádia:
+// template-radio
+// dusicky-radio
+// halloween-radio
+// lockhart-radio
