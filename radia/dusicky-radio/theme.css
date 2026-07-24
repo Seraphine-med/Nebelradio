@@ -81,5 +81,29 @@ h1{
 }
 
 .candle{
-    font-size:52px;
+    width:42px;
+    height:auto;
+}
+
+/* vosk */
+
+.wax{
+    fill:#f5efe3;
+}
+
+/* záře */
+
+.glow{
+    fill:#ffd98a;
+    opacity:.22;
+}
+
+/* plamen */
+
+.flame-outer{
+    fill:#ffb43b;
+}
+
+.flame-inner{
+    fill:#fff6a0;
 }
