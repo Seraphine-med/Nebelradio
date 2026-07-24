@@ -17,8 +17,12 @@ radia/
 Například:
 
 ```
-radia/lockhart-radio/
+radia/dusicky-radio/
 ```
+
+tj. add file -> creat new file a do názvu vložím: dusicky-radio/
+
+pak to bude vypadat takto: Nebelradio/radia/dusicky-radio/
 
 zkopíruju z templátu:
 
@@ -28,10 +32,17 @@ playlist.json
 
 v index.html si změním title a h1 podle názvu, jak chci aby se rádio jmenovalo a pak už nesahám, pokud se něco neposere, nebo nebudu chtít změnit
 
-+ nová složka: assets/.gitkeep - sem už nikdy nic dávat nebudu
-+ nová složka: music/.gitkeep
++ v index.html se ještě mění začátek vysílání rádia viz níže
++ vždy kontroluju, že to měním v index.html, který je připojený ke složce mojí akce, neměním to v templátu nebo kořenovém html, protože by se tím celé rádio rozhodilo, sahám jen na věci v té dané složce, krom config.js viz níže
 
-vytvořím nové (prázdné):
+dále udělám tyto složky opět přes add file: 
+
+assets/.gitkeep - sem už nikdy nic dávat nebudu
+
+music/.gitkeep
+
+
+vytvořím nové (prázdné) přes add file:
 
 effects.css
 
@@ -63,6 +74,8 @@ Otevři:
 ```
 playlist.json
 ```
+
++ otevřu ho opět v mé složce té akce!
 
 teď sestavím playslit, tímhle stylem:
 
@@ -115,6 +128,8 @@ V souboru `index.html` změň:
 <body data-start="2026-07-24T20:00:00">
 ```
 tady klasicky nastavím čas, pozor nevím, jak to funguje ještě se zimním časem, kdyžtak to bude +-1 hodina, musím otestovat
+
+!formát je: RRRR-MM-DDTHH:MM:SS
 
 ---
 
