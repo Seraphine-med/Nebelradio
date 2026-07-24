@@ -51,7 +51,7 @@ h1 {
     margin-bottom: 16px;
 }
 
-/* --- Realistická tmavá vinylová deska --- */
+/* --- Realistická černá vinylová deska --- */
 .vinyl {
     width: 160px;
     height: 160px;
@@ -59,46 +59,41 @@ h1 {
     background:
         repeating-radial-gradient(
             circle at center,
-            #0d0d0d 0px,
-            #0d0d0d 2px,
-            #1c1c1c 3px,
-            #0d0d0d 4px
-        ),
-        radial-gradient(
-            circle at 35% 35%,
-            rgba(255,255,255,.15) 0%,
-            rgba(255,255,255,0) 40%
+            #050505 0px,
+            #050505 3px,
+            #161616 4px,
+            #050505 5px
         );
     box-shadow:
         0 10px 25px rgba(0,0,0,.5),
-        inset 0 0 20px rgba(0,0,0,.6);
+        inset 0 0 15px rgba(0,0,0,.7);
     display:flex;
     justify-content:center;
     align-items:center;
 }
 
-/* Jen "díra" uprostřed desky, žádný text */
+/* Bílý label uprostřed desky + malá dírka */
 .center-label{
-    width:26px;
-    height:26px;
-    background: radial-gradient(circle at 35% 35%, #3a3a3a, #050505);
-    border-radius:50%;
-    box-shadow: inset 0 0 6px rgba(0,0,0,.8);
+    width: 62px;
+    height: 62px;
+    background: #f5f5f5;
+    border-radius: 50%;
+    box-shadow:
+        0 2px 6px rgba(0,0,0,.4),
+        inset 0 0 8px rgba(0,0,0,.08);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.center-label::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: #050505;
+    border-radius: 50%;
 }
 
-@keyframes spin{
-    from{
-        transform:rotate(0deg);
-    }
-    to{
-        transform:rotate(360deg);
-    }
-}
-.vinyl.playing{
-    animation:spin 4s linear infinite;
-}
-
-/* Play/pause tlačítko */
+/* Play/pause tlačítko jako skleněný prsten */
 .play-btn {
     position: absolute;
     bottom: -6px;
@@ -106,10 +101,14 @@ h1 {
     width: 76px;
     height: 76px;
     border-radius: 50%;
-    background: #ffffff;
-    color: #8b5cf6;
-    border: none;
-    box-shadow: 0 8px 20px rgba(0,0,0,.25);
+    background: rgba(255, 255, 255, 0.15);
+    border: 3px solid rgba(255, 255, 255, 0.85);
+    color: #ffffff;
+    box-shadow:
+        0 8px 24px rgba(0,0,0,.25),
+        0 0 20px rgba(255,255,255,.35);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     display:flex;
     align-items:center;
     justify-content:center;
@@ -120,7 +119,58 @@ h1 {
     transition: .25s;
 }
 .play-btn:hover {
-    background: #f5f0ff;
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.06);
+}
+
+/* Bílý label uprostřed desky + malá dírka */
+.center-label{
+    width: 62px;
+    height: 62px;
+    background: #f5f5f5;
+    border-radius: 50%;
+    box-shadow:
+        0 2px 6px rgba(0,0,0,.4),
+        inset 0 0 8px rgba(0,0,0,.08);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.center-label::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: #050505;
+    border-radius: 50%;
+}
+
+/* Play/pause tlačítko jako skleněný prsten */
+.play-btn {
+    position: absolute;
+    bottom: -6px;
+    right: calc(50% - 96px);
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    border: 3px solid rgba(255, 255, 255, 0.85);
+    color: #ffffff;
+    box-shadow:
+        0 8px 24px rgba(0,0,0,.25),
+        0 0 20px rgba(255,255,255,.35);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size: 26px;
+    padding: 0;
+    padding-left: 4px;
+    cursor: pointer;
+    transition: .25s;
+}
+.play-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
     transform: scale(1.06);
 }
 
@@ -204,10 +254,14 @@ button {
         width: 130px;
         height: 130px;
     }
-    .center-label {
-        width: 20px;
-        height: 20px;
-    }
+  .center-label {
+    width: 45px;
+    height: 45px;
+}
+.center-label::after {
+    width: 6px;
+    height: 6px;
+}
     .play-btn {
         right: calc(50% - 80px);
         width: 60px;
