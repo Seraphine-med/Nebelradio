@@ -63,6 +63,12 @@ h1 {
 
 h1{
     font-family: "Marcellus", serif;
-    letter-spacing: 3px;
+    font-size: 64px;
     font-weight: normal;
+    letter-spacing: 2px;
+    color: #f4ead6;
+
+    text-shadow:
+        0 0 10px rgba(255,245,220,.15),
+        0 3px 10px rgba(0,0,0,.35);
 }
