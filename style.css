@@ -4,37 +4,42 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background:
-radial-gradient(circle at top,
-#fff8df 0%,
-#f5e3a5 30%,
-#d8b45c 70%,
-#8c6b20 100%);
-    color: white;
     font-family: Arial, Helvetica, sans-serif;
+
+    /* 👉 sem si vlož svůj vlastní obrázek na pozadí */
+    background-color: #2b2b2b; /* záložní barva, než vložíš obrázek */
+    background-image: url("tvuj-obrazek.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
 .radio{
-background:rgba(255,248,220,.85);
-border:3px solid #d4af37;
-box-shadow:
-0 0 40px rgba(212,175,55,.45);
-border-radius: 24px;
-padding: 30px;
-width: 320px;
-text-align: center;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 24px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    padding: 30px;
+    width: 320px;
+    text-align: center;
 }
+
 h1 {
     margin: 0;
     font-size: 42px;
     letter-spacing: 6px;
     font-weight: 700;
-    color: #6b4f10;
+    color: #ffffff;
+    text-shadow: 0 2px 12px rgba(0,0,0,.35);
 }
 
 /* --- Karta s přehrávačem --- */
 .player-card {
     margin-top: 25px;
-    background: rgba(255,255,255,.35);
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 20px;
     padding: 24px 20px;
 }
@@ -45,36 +50,40 @@ h1 {
     justify-content: center;
     margin-bottom: 16px;
 }
+
+/* --- Realistická tmavá vinylová deska --- */
 .vinyl {
     width: 160px;
     height: 160px;
     border-radius: 50%;
     background:
-radial-gradient(circle,
-#fff7c7 0%,
-#f8d56b 20%,
-#d4af37 55%,
-#8a6a15 100%);
+        repeating-radial-gradient(
+            circle at center,
+            #0d0d0d 0px,
+            #0d0d0d 2px,
+            #1c1c1c 3px,
+            #0d0d0d 4px
+        ),
+        radial-gradient(
+            circle at 35% 35%,
+            rgba(255,255,255,.15) 0%,
+            rgba(255,255,255,0) 40%
+        );
     box-shadow:
-        0 10px 25px rgba(0,0,0,.35),
-        inset 0 0 25px rgba(255,255,255,.08);
+        0 10px 25px rgba(0,0,0,.5),
+        inset 0 0 20px rgba(0,0,0,.6);
     display:flex;
     justify-content:center;
     align-items:center;
 }
 
+/* Jen "díra" uprostřed desky, žádný text */
 .center-label{
-    width:60px;
-    height:60px;
-    background:#8b5cf6;
+    width:26px;
+    height:26px;
+    background: radial-gradient(circle at 35% 35%, #3a3a3a, #050505);
     border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-weight:bold;
-    font-size:14px;
-    color:white;
-    box-shadow:0 0 20px rgba(139,92,246,.6);
+    box-shadow: inset 0 0 6px rgba(0,0,0,.8);
 }
 
 @keyframes spin{
@@ -89,7 +98,7 @@ radial-gradient(circle,
     animation:spin 4s linear infinite;
 }
 
-/* Play/pause tlačítko přes roh vinylu */
+/* Play/pause tlačítko */
 .play-btn {
     position: absolute;
     bottom: -6px;
@@ -106,7 +115,7 @@ radial-gradient(circle,
     justify-content:center;
     font-size: 26px;
     padding: 0;
-    padding-left: 4px; /* opticky vycentruje trojúhelník ▶ */
+    padding-left: 4px;
     cursor: pointer;
     transition: .25s;
 }
@@ -122,7 +131,8 @@ radial-gradient(circle,
     margin: 0;
     font-weight: bold;
     font-size: 18px;
-    color: #6b4f10;
+    color: #ffffff;
+    text-shadow: 0 1px 6px rgba(0,0,0,.3);
 }
 
 /* Progress linka s časy */
@@ -133,13 +143,13 @@ radial-gradient(circle,
     width: 100%;
     height: 6px;
     border-radius: 3px;
-    background: #e8d9a0;
+    background: rgba(255,255,255,.3);
     overflow: hidden;
 }
 .progress-fill {
     height: 100%;
     width: 0%;
-    background: #d4af37;
+    background: #8b5cf6;
     transition: width .2s linear;
 }
 .time-labels {
@@ -147,12 +157,13 @@ radial-gradient(circle,
     justify-content: space-between;
     margin-top: 6px;
     font-size: 13px;
-    color: #8a6a15;
+    color: #ffffff;
+    text-shadow: 0 1px 4px rgba(0,0,0,.3);
 }
 
-/* --- Zbytek beze změny --- */
+/* --- Zbytek --- */
 button {
-    background:#f2d87a;
+    background: rgba(255,255,255,.3);
     color: white;
     border: none;
     border-radius: 50px;
@@ -179,9 +190,6 @@ button {
 
 /* 📱 Mobile version */
 @media (max-width: 600px) {
-    body {
-        padding: 20px;
-    }
     .radio {
         width: 100%;
         max-width: 330px;
@@ -196,12 +204,9 @@ button {
         width: 130px;
         height: 130px;
     }
-    .vinyl-wrapper {
-    }
     .center-label {
-        width: 48px;
-        height: 48px;
-        font-size: 12px;
+        width: 20px;
+        height: 20px;
     }
     .play-btn {
         right: calc(50% - 80px);
