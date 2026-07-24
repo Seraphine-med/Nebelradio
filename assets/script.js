@@ -23,7 +23,7 @@ let durations = [];
 
 
 // čas začátku vysílání
-const broadcastStart = new Date("2026-07-23T23:30:00");
+const broadcastStart = new Date("2026-07-23T8:20:00");
 
 fetch("playlist.json")
 
@@ -125,6 +125,7 @@ function getBroadcastPosition(){
 
     let elapsed = (now - broadcastStart) / 1000;
 
+    console.log("Elapsed:", elapsed);
 
     if(elapsed < 0){
 
