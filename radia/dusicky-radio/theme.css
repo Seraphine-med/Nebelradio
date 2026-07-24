@@ -6,13 +6,6 @@ body {
     background-repeat: no-repeat;
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(5, 8, 20, 0.35);
-    z-index: -1;
-}
 
 /* 🕯️ Dušičky – barevné téma */
 
