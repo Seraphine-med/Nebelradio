@@ -61,7 +61,12 @@ function getDurations(){
 
             if(loaded === playlist.length){
 
-    loadSong();
+    const position = getBroadcastPosition();
+
+    if(position){
+        currentSong = position.songIndex;
+        loadSong();
+    }
 
 }
 
