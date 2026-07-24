@@ -13,28 +13,43 @@ radial-gradient(circle at top,
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
-
 .radio{
-
 background:rgba(255,248,220,.85);
-
 border:3px solid #d4af37;
-
 box-shadow:
 0 0 40px rgba(212,175,55,.45);
-
+border-radius: 24px;
+padding: 30px;
+width: 320px;
+text-align: center;
 }
 h1 {
     margin: 0;
     font-size: 42px;
     letter-spacing: 6px;
     font-weight: 700;
+    color: #6b4f10;
+}
+
+/* --- Karta s přehrávačem --- */
+.player-card {
+    position: relative;
+    margin-top: 80px;
+    background: rgba(255,255,255,.35);
+    border-radius: 20px;
+    padding: 90px 20px 24px;
+}
+
+.vinyl-wrapper {
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .vinyl {
-    width: 220px;
-    height: 220px;
-    margin: 35px auto;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     background:
 radial-gradient(circle,
@@ -43,14 +58,101 @@ radial-gradient(circle,
 #d4af37 55%,
 #8a6a15 100%);
     box-shadow:
-        0 0 25px rgba(0,0,0,.6),
+        0 10px 25px rgba(0,0,0,.35),
         inset 0 0 25px rgba(255,255,255,.08);
-
     display:flex;
     justify-content:center;
     align-items:center;
 }
 
+.center-label{
+    width:60px;
+    height:60px;
+    background:#8b5cf6;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    font-size:14px;
+    color:white;
+    box-shadow:0 0 20px rgba(139,92,246,.6);
+}
+
+@keyframes spin{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+.vinyl.playing{
+    animation:spin 4s linear infinite;
+}
+
+/* Play/pause tlačítko přes roh vinylu */
+.play-btn {
+    position: absolute;
+    bottom: -6px;
+    right: -6px;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: #fff;
+    color: #8a6a15;
+    border: 2px solid #d4af37;
+    box-shadow: 0 6px 16px rgba(0,0,0,.25);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size: 20px;
+    padding: 0;
+    cursor: pointer;
+    transition: .25s;
+}
+.play-btn:hover {
+    background: #a855f7;
+    color: white;
+    transform: scale(1.08);
+}
+
+.song-info {
+    margin-top: 6px;
+}
+#song-name {
+    margin: 0;
+    font-weight: bold;
+    font-size: 18px;
+    color: #6b4f10;
+}
+
+/* Progress linka s časy */
+.progress-container {
+    margin-top: 18px;
+}
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: #e8d9a0;
+    overflow: hidden;
+}
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: #d4af37;
+    transition: width .2s linear;
+}
+.time-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    font-size: 13px;
+    color: #8a6a15;
+}
+
+/* --- Zbytek beze změny --- */
 button {
     background:#f2d87a;
     color: white;
@@ -61,111 +163,55 @@ button {
     cursor: pointer;
     transition: .25s;
 }
-
-button:hover {
-    background: #a855f7;
-    transform: scale(1.05);
-}
-
-#song {
-    margin-top: 25px;
-    color: #d7d7d7;
-}
-
-#time {
-    margin-top: 10px;
-    color: #999;
-    font-size: 14px;
-}
-.center-label{
-    width:70px;
-    height:70px;
-    background:#8b5cf6;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-weight:bold;
-    font-size:22px;
-    color:white;
-    box-shadow:0 0 20px rgba(139,92,246,.6);
-}
-@keyframes spin{
-
-    from{
-        transform:rotate(0deg);
-    }
-
-    to{
-        transform:rotate(360deg);
-    }
-
-}
-
-.vinyl.playing{
-
-    /* update */
-
-    animation:spin 4s linear infinite;
-
-}
-.volume {
-
+.volume-control {
     margin-top:25px;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
-
-
+#mute {
+    padding: 8px 14px;
+}
 #volume {
-
     width:200px;
-
     cursor:pointer;
-
     accent-color:#8b5cf6;
-
 }
 
 /* 📱 Mobile version */
-
 @media (max-width: 600px) {
-
     body {
         padding: 20px;
     }
-
     .radio {
         width: 100%;
         max-width: 330px;
         padding: 30px 20px;
         border-radius: 20px;
     }
-
     h1 {
         font-size: 32px;
         letter-spacing: 4px;
     }
-
     .vinyl {
-        width: 180px;
-        height: 180px;
-        margin: 30px auto;
+        width: 130px;
+        height: 130px;
     }
-
+    .vinyl-wrapper {
+        top: -55px;
+    }
     .center-label {
-        width: 55px;
-        height: 55px;
-        margin: 62px auto;
-        font-size: 18px;
+        width: 48px;
+        height: 48px;
+        font-size: 12px;
     }
-
-    button {
-        font-size: 15px;
-        padding: 12px 25px;
+    .play-btn {
+        width: 46px;
+        height: 46px;
+        font-size: 17px;
     }
-
     #volume {
         width: 180px;
     }
-
 }
