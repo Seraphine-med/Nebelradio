@@ -155,3 +155,13 @@ body {
     background-image: url("assets/dusickybackground.jpg");
 
 ale to už pořeší i AI
+
+
++ radio spustím tak, že jdu do karty settings -> pages -> visit site¨
+
++ během měnění kódů a celkových změn, co ukládám, kontroluju kartu actions
+
+  jakmile mi vyskočí zelená fajfka u provedené změny, tak pokračuju dál
+
+  kód se sice uloží vždy, i když to hodí failure, ale mohlo by to pak blbnout, takže při provádění změn raději vždy počkat, než se načtou
+
