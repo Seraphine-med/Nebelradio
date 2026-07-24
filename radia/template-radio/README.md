@@ -22,6 +22,7 @@ radia/lockhart-radio/
 
 zkopíruju z templátu:
 index.html 
+
 playlist.json
 
 v index.html si změním title a h1 podle názvu, jak chci aby se rádio jmenovalo a pak už nesahám, pokud se něco neposere, nebo nebudu chtít změnit
@@ -31,6 +32,7 @@ v index.html si změním title a h1 podle názvu, jak chci aby se rádio jmenova
 
 vytvořím nové (prázdné):
 effects.css
+
 theme.css
 
 a nechám nakódovat AI pozadí a vzhled té stránky
