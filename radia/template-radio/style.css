@@ -71,6 +71,20 @@ h1 {
     align-items:center;
 }
 
+.vinyl.playing {
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 /* Bílý label uprostřed desky + malá dírka */
 .center-label{
     width: 62px;
