@@ -137,7 +137,6 @@ function playCurrentSong(startTime){
     }
 
 };
-    loadSong();
 
 }
 function getBroadcastPosition(){
