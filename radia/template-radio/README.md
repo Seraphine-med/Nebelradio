@@ -65,24 +65,43 @@ playlist.json
 ```
 
 teď sestavím playslit, tímhle stylem:
+
 [
+ 
   {
+    
     "title": "Song 1",
+    
     "url": "music/dsong1.mp3"
+ 
   },
+  
   {
+  
     "title": "Song 2",
+    
     "url": "music/dsong2.mp3"
+  
   },
+  
   {
+  
     "title": "Song 3",
+    
     "url": "music/dsong3.mp3"
+  
   },
+  
   ...
+  
   {
+  
     "title": "Song X",
+    
     "url": "music/dsongX.mp3"
+  
   }              pozor zde za tou závorkou nedávám čárku u poslední skladby a vždy vkládám správný název skladby, které jsem si podle akce udělala
+
   
   ]
 
@@ -109,3 +128,15 @@ zde změním název rádia, které chci, aby hrálo
 ---
 
 ### 6. Hotovo 🎉
+
+pozn.: pokud chci vkládat obrázek jako pozadí:
+
+stáhnu libovolný obrázek dané velikosti s koncovkou .jpg!, pojmenuju ho názevakcebackground.jpg, např.: dusickybackground.jpg
+
+pak ho nahraju do složky assets a vkládám do kódu theme. css do body, například takto:
+
+body {
+   
+    background-image: url("assets/dusickybackground.jpg");
+
+ale to už pořeší i AI
