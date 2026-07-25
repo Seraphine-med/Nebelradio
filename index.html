@@ -44,11 +44,18 @@
         >
     </div>
 </div>
-<script src="config.js?v=2"></script>
 <script>
-    if (ACTIVE_RADIO !== "template-radio") {
-        window.location.href = `radia/${ACTIVE_RADIO}/index.html`;
-    }
+    var nebelConfig = document.createElement('script');
+    nebelConfig.src = "config.js?t=" + Date.now();
+    document.head.appendChild(nebelConfig);
+</script>
+<script>
+    // pozor - kód, co čte ACTIVE_RADIO, musí počkat, až se config.js opravdu načte
+    nebelConfig.onload = function(){
+        if (ACTIVE_RADIO !== "template-radio") {
+            window.location.href = `radia/${ACTIVE_RADIO}/index.html`;
+        }
+    };
 </script>
 </body>
 </html>
