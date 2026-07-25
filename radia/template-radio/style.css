@@ -225,4 +225,14 @@ button {
     #volume {
         width: 180px;
     }
+
+    .play-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+.play-btn:disabled:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: none;
+}
 }
