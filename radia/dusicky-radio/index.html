@@ -10,7 +10,11 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="../template-radio/style.css">
+<link rel="stylesheet" id="nebelSharedStyle" href="">
+<script>
+    document.getElementById('nebelSharedStyle').href =
+        "../template-radio/style.css?t=" + Date.now();
+</script>
 <link rel="stylesheet" href="theme.css">
 <link rel="stylesheet" href="effects.css">
 </head>
