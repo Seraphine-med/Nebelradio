@@ -4,7 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Radio Template</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" id="nebelSharedStyle" href="">
+<script>
+    document.getElementById('nebelSharedStyle').href =
+        "../template-radio/style.css?t=" + Date.now();
+</script>
 </head>
 <body data-start="2026-07-24T08:25:00">
 <div class="radio">
