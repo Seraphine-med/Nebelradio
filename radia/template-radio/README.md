@@ -6,9 +6,8 @@ Tato složka obsahuje základní šablonu pro všechna rádia eBradavic.
 
 ## Jak vytvořit nové rádio
 
-### 1. Zkopíruj šablonu
+### 1. Vytvoř složku pro akci
 
-Zkopíruj obsah této složky do nové složky v:
 
 ```
 radia/
@@ -20,11 +19,11 @@ Například:
 radia/dusicky-radio/
 ```
 
-tj. add file -> creat new file a do názvu vložím: dusicky-radio/
+tj. add file -> creat new file a do názvu vložím: radia/dusicky-radio/
 
 pak to bude vypadat takto: Nebelradio/radia/dusicky-radio/
 
-zkopíruju z templátu:
+zkopíruju z templátu tj. odtud - Nebelradio/radia/template-radio/:
 
 index.html 
 
@@ -37,9 +36,9 @@ v index.html si změním title a h1 podle názvu, jak chci aby se rádio jmenova
 
 dále udělám tyto složky opět přes add file: 
 
-assets/.gitkeep - sem už nikdy nic dávat nebudu
+assets/.gitkeep - sem už nikdy nic dávat nebudu, pouze přímo do složky assets se později nahrává background viz níže
 
-music/.gitkeep
+music/.gitkeep - sem se pak bude nahrávat hudba
 
 
 vytvořím nové (prázdné) přes add file:
@@ -127,7 +126,6 @@ V souboru `index.html` změň:
 ```html
 <body data-start="2026-07-24T20:00:00">
 ```
-tady klasicky nastavím čas, pozor nevím, jak to funguje ještě se zimním časem, kdyžtak to bude +-1 hodina, musím otestovat
 
 !formát je: RRRR-MM-DDTHH:MM:SS
 
@@ -157,7 +155,7 @@ body {
 ale to už pořeší i AI
 
 
-+ radio spustím tak, že jdu do karty settings -> pages -> visit site¨
++ radio si zobrazím tak, že jdu do karty settings -> pages -> visit site nebo kliknu přímo na odkaz
 
 + během měnění kódů a celkových změn, co ukládám, kontroluju kartu actions
 
@@ -165,38 +163,3 @@ ale to už pořeší i AI
 
   kód se sice uloží vždy, i když to hodí failure, ale mohlo by to pak blbnout, takže při provádění změn raději vždy počkat, než se načtou
 
-## ⚠️ Cache-busting při úpravě sdíleného script.js / style.css
-
-Když upravíš `radia/template-radio/assets/script.js` nebo 
-`radia/template-radio/style.css`, prohlížeč (i GitHub Pages CDN) si 
-starou verzi souboru může "pamatovat" (cache) a nezobrazí novou 
-verzi, i když je na GitHubu už uložená správně.
-
-### Řešení: zvýšit číslo verze v URL
-
-V `<script src="...">` (a případně `<link href="...">`) najdi na 
-konci `?v=X` a **zvyš číslo o 1**:
-
-```html
-<script src="../template-radio/assets/script.js?v=3"></script>
-```
-→ 
-```html
-<script src="../template-radio/assets/script.js?v=4"></script>
-```
-
-### Musíš to udělat VE VŠECH rádiích
-
-Každé rádio (`template-radio`, `dusicky-radio`, `halloween-radio`, 
-`lockhart-radio`, ...) má svůj vlastní `index.html` se svým vlastním 
-`<script src="...">` tagem. I když všechna odkazují na ten samý 
-sdílený soubor, prohlížeč si cache pamatuje zvlášť pro každou stránku 
-– takže musíš zvýšit `?v=` **v každém `index.html` zvlášť**, jinak 
-některá rádia uvidí novou verzi a jiná ne.
-
-### Proč to funguje
-
-Prohlížeč si soubory necachuje podle obsahu, ale podle URL adresy. 
-`script.js?v=3` a `script.js?v=4` jsou pro něj dvě úplně odlišné 
-adresy, takže tu druhou musí stáhnout znovu ze serveru místo použití 
-staré uložené kopie.
