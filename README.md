@@ -1,69 +1,165 @@
-# 🎙️ Nebel Radio
+# 🎵 Nebel Radio Template
 
-A live synchronized radio player created for eBradavice events.
-
-Every visitor hears the same song at the same moment, just like listening to a real radio broadcast.
+Tato složka obsahuje základní šablonu pro všechna rádia eBradavic.
 
 ---
 
-## ✨ Features
+## Jak vytvořit nové rádio
 
-- 📻 Live synchronized broadcast
-- 💿 Animated vinyl record
-- ▶️ Play / Pause
-- 🔇 Mute & Volume control
-- 📱 Mobile friendly
-- ⏱ Live progress bar
-- 🎵 Playlist support
-- 🎨 Custom themes for every event
+### 1. Vytvoř složku pro akci
 
----
-
-## 📂 Project structure
 
 ```
-Nebelradio
-│
-├── template-radio
-│   ├── script.js
-│   ├── style.css
-│   ├── index.html
-│   ├── playlist.json
-│   └── README.md
-│
-└── radia
-    ├── lockhart-radio
-    ├── halloween-radio
-    ├── yule-ball-radio
-    └── ...
+radia/
 ```
 
+Například:
+
+```
+radia/dusicky-radio/
+```
+
+tj. add file -> creat new file a do názvu vložím: radia/dusicky-radio/
+
+pak to bude vypadat takto: Nebelradio/radia/dusicky-radio/
+
+zkopíruju z templátu tj. odtud - Nebelradio/radia/template-radio/:
+
+index.html 
+
+playlist.json
+
+v index.html si změním title a h1 podle názvu, jak chci aby se rádio jmenovalo a pak už nesahám, pokud se něco neposere, nebo nebudu chtít změnit
+
++ v index.html se ještě mění začátek vysílání rádia viz níže
++ vždy kontroluju, že to měním v index.html, který je připojený ke složce mojí akce, neměním to v templátu nebo kořenovém html, protože by se tím celé rádio rozhodilo, sahám jen na věci v té dané složce, krom config.js viz níže
+
+dále udělám tyto složky opět přes add file: 
+
+assets/.gitkeep - sem už nikdy nic dávat nebudu, pouze přímo do složky assets se později nahrává background viz níže
+
+music/.gitkeep - sem se pak bude nahrávat hudba
+
+
+vytvořím nové (prázdné) přes add file:
+
+effects.css
+
+theme.css
+
+a nechám nakódovat AI pozadí a vzhled té stránky
+
+
 ---
 
-## 🎨 Creating a new radio
+### 2. Přidej hudbu
 
-1. Copy the template.
-2. Add your music.
-3. Edit `playlist.json`.
-4. Change the broadcast start time.
-5. Customize the theme.
+Nahraj MP3 soubory do složky:
 
-Done.
+```
+music/
+```
+do nové vytvořené složky music v kroku 1 uploaduju písničky (koncovka .mp3!)
++ tady je pravidlo: písničky jmenuju tak, že dám počáteční písmeno akce, takže Dušičky -> d, napíšu song a číslo písničky, takže ve výsledku to bude vypadat třeba takto: dsong1.mp3, dsong2.mp3, dsong51mp3..., čísluju samozřejme postupně a nevynechávám čísla, až pak když mám takhle přejmenované audia, je sem začnu vkládat (jen do složky music u dané akce, nikam jinam!)
 
----
-
-## 🚀 Planned features
-
-- [ ] Song title
-- [ ] Equalizer animation
-- [ ] Radio tuning sound
-- [ ] Theme system
-- [ ] Scheduled broadcasts
-- [ ] Ambient effects
-- [ ] Snow / rain / particles
-- [ ] Animated backgrounds
-- [ ] Loading screen
+písničky stahuju normálně pomocí konvertu URL to mp3 na internetu milion a vkládám odkazy přímo z YT
 
 ---
 
-Made with ❤️ for eBradavice.
+### 3. Uprav playlist
+
+Otevři:
+
+```
+playlist.json
+```
+
++ otevřu ho opět v mé složce té akce!
+
+teď sestavím playslit, tímhle stylem:
+
+[
+ 
+  {
+    
+    "title": "Song 1",
+    
+    "url": "music/dsong1.mp3"
+ 
+  },
+  
+  {
+  
+    "title": "Song 2",
+    
+    "url": "music/dsong2.mp3"
+  
+  },
+  
+  {
+  
+    "title": "Song 3",
+    
+    "url": "music/dsong3.mp3"
+  
+  },
+  
+  ...
+  
+  {
+  
+    "title": "Song X",
+    
+    "url": "music/dsongX.mp3"
+  
+  }              pozor zde za tou závorkou nedávám čárku u poslední skladby a vždy vkládám správný název skladby, které jsem si podle akce udělala
+
+  
+  ]
+
+---
+
+### 4. Nastav čas vysílání
+
+V souboru `index.html` změň:
+
+```html
+<body data-start="2026-07-24T20:00:00">
+```
+
+!formát je: RRRR-MM-DDTHH:MM:SS
+
+---
+
+### 5. configurace rádia
+
+najedu do repozitáře Nebelradio a kliknu na config.js
+
+zde změním název rádia, které chci, aby hrálo
+
+
+---
+
+### 6. Hotovo 🎉
+
+pozn.: pokud chci vkládat obrázek jako pozadí:
+
+stáhnu libovolný obrázek dané velikosti s koncovkou .jpg!, pojmenuju ho názevakcebackground.jpg, např.: dusickybackground.jpg
+
+pak ho nahraju do složky assets a vkládám do kódu theme. css do body, například takto:
+
+body {
+   
+    background-image: url("assets/dusickybackground.jpg");
+
+ale to už pořeší i AI
+
+
++ radio si zobrazím tak, že jdu do karty settings -> pages -> visit site nebo kliknu přímo na odkaz
+
++ během měnění kódů a celkových změn, co ukládám, kontroluju kartu actions
+
+  jakmile mi vyskočí zelená fajfka u provedené změny, tak pokračuju dál
+
+  kód se sice uloží vždy, i když to hodí failure, ale mohlo by to pak blbnout, takže při provádění změn raději vždy počkat, než se načtou
+
