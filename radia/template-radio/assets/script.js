@@ -27,10 +27,43 @@ muteButton.innerHTML = "🔊";
 playButton.disabled = true;
 playButton.innerHTML = "⏳";
 
-// čas začátku vysílání
+// čas začátku vysílání (automaticky přepočítáno na pražský čas, ať je léto nebo zima)
 const startTime = document.body.dataset.start;
-const broadcastStart = new Date(startTime);
+const broadcastStart = getPragueBroadcastStart(startTime);
 
+function getPragueOffsetMinutes(date){
+
+    const dtf = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'Europe/Prague',
+        hourCycle: 'h23',
+        year: 'numeric', month: '2-digit', day: '2-digit',
+        hour: '2-digit', minute: '2-digit', second: '2-digit'
+    });
+
+    const parts = dtf.formatToParts(date).reduce((acc, p) => {
+        if (p.type !== 'literal') acc[p.type] = p.value;
+        return acc;
+    }, {});
+
+    const asUTC = Date.UTC(
+        parts.year, parts.month - 1, parts.day,
+        parts.hour, parts.minute, parts.second
+    );
+
+    return (asUTC - date.getTime()) / 60000;
+
+}
+
+function getPragueBroadcastStart(dateTimeStr){
+
+    // vezme zapsaný čas jako "hodiny v Praze" a přepočítá na skutečný univerzální okamžik
+    const naiveUTC = new Date(dateTimeStr + "Z").getTime();
+
+    const offsetMinutes = getPragueOffsetMinutes(new Date(naiveUTC));
+
+    return new Date(naiveUTC - offsetMinutes * 60000);
+
+}
 fetch("playlist.json")
 
 .then(response => response.json())
