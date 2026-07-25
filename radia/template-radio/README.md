@@ -165,3 +165,38 @@ ale to už pořeší i AI
 
   kód se sice uloží vždy, i když to hodí failure, ale mohlo by to pak blbnout, takže při provádění změn raději vždy počkat, než se načtou
 
+## ⚠️ Cache-busting při úpravě sdíleného script.js / style.css
+
+Když upravíš `radia/template-radio/assets/script.js` nebo 
+`radia/template-radio/style.css`, prohlížeč (i GitHub Pages CDN) si 
+starou verzi souboru může "pamatovat" (cache) a nezobrazí novou 
+verzi, i když je na GitHubu už uložená správně.
+
+### Řešení: zvýšit číslo verze v URL
+
+V `<script src="...">` (a případně `<link href="...">`) najdi na 
+konci `?v=X` a **zvyš číslo o 1**:
+
+```html
+<script src="../template-radio/assets/script.js?v=3"></script>
+```
+→ 
+```html
+<script src="../template-radio/assets/script.js?v=4"></script>
+```
+
+### Musíš to udělat VE VŠECH rádiích
+
+Každé rádio (`template-radio`, `dusicky-radio`, `halloween-radio`, 
+`lockhart-radio`, ...) má svůj vlastní `index.html` se svým vlastním 
+`<script src="...">` tagem. I když všechna odkazují na ten samý 
+sdílený soubor, prohlížeč si cache pamatuje zvlášť pro každou stránku 
+– takže musíš zvýšit `?v=` **v každém `index.html` zvlášť**, jinak 
+některá rádia uvidí novou verzi a jiná ne.
+
+### Proč to funguje
+
+Prohlížeč si soubory necachuje podle obsahu, ale podle URL adresy. 
+`script.js?v=3` a `script.js?v=4` jsou pro něj dvě úplně odlišné 
+adresy, takže tu druhou musí stáhnout znovu ze serveru místo použití 
+staré uložené kopie.
