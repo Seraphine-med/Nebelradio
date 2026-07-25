@@ -98,6 +98,10 @@
         >
     </div>
 </div>
-<script src="../template-radio/assets/script.js?v=3"></script>
+<script>
+    var nebelScript = document.createElement('script');
+    nebelScript.src = "../template-radio/assets/script.js?t=" + Date.now();
+    document.body.appendChild(nebelScript);
+</script>
 </body>
 </html>
