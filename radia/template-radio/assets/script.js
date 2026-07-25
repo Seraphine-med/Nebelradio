@@ -72,6 +72,24 @@ function getDurations(){
 
         });
 
+        audioTest.addEventListener("error", function(){
+
+            console.warn("Nepodařilo se načíst skladbu:", song.url);
+
+            durations[index] = 0;
+
+            loaded++;
+
+
+            if(loaded === playlist.length){
+
+    durationsReady = true;
+    loadSong();
+
+}
+
+        });
+
     });
 
 }
@@ -86,6 +104,16 @@ audio.load();
 }
 
 function playCurrentSong(startTime){
+
+    audio.onerror = function(){
+
+        console.warn("Chyba přehrávání, přeskakuji na další skladbu.");
+
+        currentSong = (currentSong + 1) % playlist.length;
+
+        playCurrentSong(0);
+
+    };
 
     audio.onloadedmetadata = function(){
 
