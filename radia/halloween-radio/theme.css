@@ -15,6 +15,7 @@ body {
 }
 
 .player-card {
+    position: relative;
     background: rgba(20, 8, 32, 0.35);
     border: 1px solid rgba(255, 140, 40, 0.18);
 }
@@ -81,4 +82,21 @@ h1 {
 #mute {
     background: rgba(255, 140, 40, 0.15);
     color: #f3d9c4;
+}
+
+/* Pavučiny v rozích karty */
+.cobweb {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    z-index: 1;
+    pointer-events: none;
+}
+.cobweb-left {
+    top: -4px;
+    left: -4px;
+}
+.cobweb-right {
+    top: -4px;
+    right: -4px;
 }
