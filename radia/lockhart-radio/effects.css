@@ -1,239 +1,149 @@
-/* ✨ Lockhart – třpyt, hvězdy a zlatá magie */
+/* ✨ Lockhart – zlaté jiskry a jemná magie */
 
 body{
     position:relative;
     overflow:hidden;
 }
 
-/* Zlatá záře */
-
+/* Zlatá záře na pozadí */
 body::before{
-
     content:"";
-
     position:fixed;
     inset:-10%;
-
     background:
         radial-gradient(circle at 20% 20%, rgba(255,235,160,.22), transparent 40%),
         radial-gradient(circle at 80% 30%, rgba(255,220,120,.18), transparent 45%),
         radial-gradient(circle at 50% 90%, rgba(255,255,255,.12), transparent 45%);
-
     filter:blur(35px);
-
     animation:goldGlow 16s ease-in-out infinite alternate;
-
     pointer-events:none;
-
     z-index:0;
-
 }
 
 @keyframes goldGlow{
-
-0%{
-transform:translateX(-2%);
+    from{
+        transform:translateX(-2%);
+    }
+    to{
+        transform:translateX(2%);
+    }
 }
 
-100%{
-transform:translateX(2%);
-}
-
-}
-
-/* Plovoucí hvězdy */
-
+/* Rádio nad efekty */
 .radio{
     position:relative;
     z-index:2;
 }
 
+/* Plovoucí zlaté jiskry */
 .radio::before{
-
     content:"✨";
-
     position:fixed;
-
     top:18%;
     left:8%;
-
-    font-size:26px;
-
+    font-size:28px;
     opacity:.75;
-
-    animation:starFloat 8s ease-in-out infinite;
-
+    animation:sparkleLeft 8s ease-in-out infinite;
     pointer-events:none;
-
 }
 
 .radio::after{
-
-    content:"⭐";
-
+    content:"✨";
     position:fixed;
-
     top:35%;
     right:10%;
-
-    font-size:20px;
-
+    font-size:22px;
     opacity:.6;
-
-    animation:starFloat2 11s ease-in-out infinite;
-
+    animation:sparkleRight 11s ease-in-out infinite;
     pointer-events:none;
-
 }
 
-@keyframes starFloat{
-
-0%{
-transform:translateY(0) rotate(0deg);
+@keyframes sparkleLeft{
+    0%,100%{
+        transform:translateY(0) rotate(0deg);
+    }
+    50%{
+        transform:translateY(-18px) rotate(10deg);
+    }
 }
 
-50%{
-transform:translateY(-20px) rotate(10deg);
+@keyframes sparkleRight{
+    0%,100%{
+        transform:translateY(0) rotate(0deg);
+    }
+    50%{
+        transform:translateY(16px) rotate(-8deg);
+    }
 }
 
-100%{
-transform:translateY(0) rotate(0deg);
-}
-
-}
-
-@keyframes starFloat2{
-
-0%{
-transform:translateY(0) rotate(0deg);
-}
-
-50%{
-transform:translateY(18px) rotate(-8deg);
-}
-
-100%{
-transform:translateY(0) rotate(0deg);
-}
-
-}
-
-/* Třpyt kolem přehrávače */
-
-.player-card{
-
-    position:relative;
-
-}
-
+/* Jemná záře kolem přehrávače */
 .player-card::before{
-
     content:"";
-
     position:absolute;
-
-    inset:-4px;
-
+    inset:-5px;
     border-radius:inherit;
-
     box-shadow:
-        0 0 18px rgba(255,225,120,.35),
-        0 0 35px rgba(255,240,180,.18);
-
-    animation:cardGlow 3s ease-in-out infinite;
-
+        0 0 20px rgba(255,220,120,.35),
+        0 0 40px rgba(255,240,180,.18);
+    animation:cardGlow 3.5s ease-in-out infinite;
     pointer-events:none;
-
 }
 
 @keyframes cardGlow{
-
-0%,100%{
-
-opacity:.55;
-
+    0%,100%{
+        opacity:.5;
+    }
+    50%{
+        opacity:1;
+    }
 }
 
-50%{
-
-opacity:1;
-
+/* Třpytění ikon ✨ v nadpisu */
+.sparkle{
+    animation:titleSparkle 3s ease-in-out infinite;
 }
 
-}
-
-/* Třpyt hvězdy */
-
-.star-glow{
-
-    animation:shine 3s ease-in-out infinite;
-
-}
-
-@keyframes shine{
-
-0%,100%{
-
-opacity:.25;
-
-transform:scale(1);
-
-}
-
-50%{
-
-opacity:.8;
-
-transform:scale(1.08);
-
-}
-
+@keyframes titleSparkle{
+    0%,100%{
+        transform:scale(1);
+        opacity:.7;
+    }
+    50%{
+        transform:scale(1.2);
+        opacity:1;
+    }
 }
 
 /* Vinyl lehce září */
-
 .vinyl{
-
     animation:vinylGlow 4s ease-in-out infinite;
-
 }
 
 @keyframes vinylGlow{
+    0%,100%{
+        box-shadow:
+            0 12px 30px rgba(0,0,0,.45),
+            inset 0 0 18px rgba(0,0,0,.75),
+            0 0 12px rgba(255,220,120,.18);
+    }
 
-0%,100%{
-
-box-shadow:
-0 12px 30px rgba(0,0,0,.45),
-inset 0 0 18px rgba(0,0,0,.75),
-0 0 12px rgba(255,220,120,.18);
-
-}
-
-50%{
-
-box-shadow:
-0 12px 30px rgba(0,0,0,.45),
-inset 0 0 18px rgba(0,0,0,.75),
-0 0 28px rgba(255,220,120,.45);
-
-}
-
+    50%{
+        box-shadow:
+            0 12px 30px rgba(0,0,0,.45),
+            inset 0 0 18px rgba(0,0,0,.75),
+            0 0 28px rgba(255,220,120,.45);
+    }
 }
 
 /* Mobil */
-
 @media(max-width:600px){
 
-.radio::before{
+    .radio::before{
+        font-size:18px;
+    }
 
-font-size:18px;
-
-}
-
-.radio::after{
-
-font-size:16px;
-
-}
+    .radio::after{
+        font-size:16px;
+    }
 
 }
