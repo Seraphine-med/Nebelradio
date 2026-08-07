@@ -205,3 +205,94 @@
         drop-shadow(0 0 5px rgba(244,211,130,.35));
 
 }
+/* ✨ LOCKHART – GOLDEN MAGIC */
+
+.radio {
+    animation: goldenAura 4s ease-in-out infinite;
+}
+
+@keyframes goldenAura {
+
+    0%, 100% {
+        box-shadow:
+            0 10px 50px rgba(0,0,0,.45),
+            0 0 25px rgba(218,181,91,.12);
+    }
+
+    50% {
+        box-shadow:
+            0 10px 50px rgba(0,0,0,.45),
+            0 0 42px rgba(218,181,91,.28),
+            0 0 70px rgba(218,181,91,.08);
+    }
+}
+
+
+/* ✦ MAGICKÉ JISKRY */
+
+.radio::after {
+    content: "✦     ✧     ✦";
+
+    position: absolute;
+
+    top: 8px;
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: rgba(244, 210, 125, 0.7);
+
+    font-size: 12px;
+
+    letter-spacing: 7px;
+
+    pointer-events: none;
+
+    animation: sparkle 3s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+
+    0%, 100% {
+        opacity: .3;
+    }
+
+    50% {
+        opacity: 1;
+        text-shadow:
+            0 0 8px rgba(255,220,130,.8);
+    }
+}
+
+
+/* ✨ MALÉ ZLATÉ JISKRY DOLE */
+
+.volume-control {
+    position: relative;
+}
+
+.volume-control::after {
+    content: "✧  ✦  ✧";
+
+    position: absolute;
+
+    bottom: -25px;
+
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: rgba(218,181,91,.45);
+
+    font-size: 11px;
+
+    letter-spacing: 8px;
+
+    pointer-events: none;
+
+    animation: sparkle 4s ease-in-out infinite;
+}
