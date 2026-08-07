@@ -1,140 +1,279 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>🎃 Halloween</title>
+
+<!-- Font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap"
+    rel="stylesheet"
+>
+
+<!-- Sdílený styl -->
 <link rel="stylesheet" id="nebelSharedStyle" href="">
+
 <script>
     document.getElementById('nebelSharedStyle').href =
         "../template-radio/style.css?t=" + Date.now();
 </script>
+
+<!-- Vlastní styl rádia -->
 <link rel="stylesheet" id="nebelTheme" href="">
 <link rel="stylesheet" id="nebelEffects" href="">
+
 <script>
-    document.getElementById('nebelTheme').href = "theme.css?t=" + Date.now();
-    document.getElementById('nebelEffects').href = "effects.css?t=" + Date.now();
+    document.getElementById('nebelTheme').href =
+        "theme.css?t=" + Date.now();
+
+    document.getElementById('nebelEffects').href =
+        "effects.css?t=" + Date.now();
 </script>
+
 </head>
+
 <body data-start="2026-07-24T08:25:00">
+
 <div class="radio">
+
+    <!-- 🕸️ Pavučina vlevo nahoře -->
+    <svg
+        class="cobweb cobweb-left"
+        viewBox="0 0 100 100"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+
+        <g
+            fill="none"
+            stroke="rgba(230,222,240,0.4)"
+            stroke-width="0.8"
+        >
+
+            <!-- radiální vlákna -->
+            <path d="M0,0 Q10,20 6,45"/>
+            <path d="M0,0 Q20,15 22,42"/>
+            <path d="M0,0 Q28,10 42,22"/>
+            <path d="M0,0 Q15,28 45,15"/>
+            <path d="M0,0 L60,0"/>
+            <path d="M0,0 L0,60"/>
+
+            <!-- soustředné oblouky -->
+            <path d="M6,0 Q9,9 0,12"/>
+            <path d="M14,0 Q20,20 0,26"/>
+            <path d="M24,0 Q34,34 0,42"/>
+            <path d="M36,0 Q50,50 0,56"/>
+
+        </g>
+
+    </svg>
+
+
+    <!-- 🕸️ Pavučina vpravo nahoře -->
+    <svg
+        class="cobweb cobweb-right"
+        viewBox="0 0 100 100"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+
+        <g
+            fill="none"
+            stroke="rgba(230,222,240,0.4)"
+            stroke-width="0.8"
+        >
+
+            <!-- radiální vlákna -->
+            <path d="M100,0 Q90,20 94,45"/>
+            <path d="M100,0 Q80,15 78,42"/>
+            <path d="M100,0 Q72,10 58,22"/>
+            <path d="M100,0 Q85,28 55,15"/>
+            <path d="M100,0 L40,0"/>
+            <path d="M100,0 L100,60"/>
+
+            <!-- soustředné oblouky -->
+            <path d="M94,0 Q91,9 100,12"/>
+            <path d="M86,0 Q80,20 100,26"/>
+            <path d="M76,0 Q66,34 100,42"/>
+            <path d="M64,0 Q50,50 100,56"/>
+
+        </g>
+
+    </svg>
+
+
+    <!-- 🎃 Nadpis -->
     <div class="title">
-<svg class="pumpkin" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
 
-    <!-- záře -->
-    <ellipse class="glow" cx="30" cy="34" rx="22" ry="20"/>
+        <svg
+            class="pumpkin"
+            viewBox="0 0 60 60"
+            xmlns="http://www.w3.org/2000/svg"
+        >
 
-    <!-- tělo dýně -->
-    <path class="pumpkin-body"
-          d="M30 14
-             C14 14 8 26 8 36
-             C8 48 18 54 30 54
-             C42 54 52 48 52 36
-             C52 26 46 14 30 14Z"/>
+            <!-- záře -->
+            <ellipse
+                class="glow"
+                cx="30"
+                cy="34"
+                rx="22"
+                ry="20"
+            />
 
-    <!-- žebra dýně -->
-    <path class="rib" d="M18 16 C14 26 14 44 18 52"/>
-    <path class="rib" d="M42 16 C46 26 46 44 42 52"/>
-    <path class="rib" d="M30 14 L30 54"/>
+            <!-- tělo dýně -->
+            <path
+                class="pumpkin-body"
+                d="M30 14
+                   C14 14 8 26 8 36
+                   C8 48 18 54 30 54
+                   C42 54 52 48 52 36
+                   C52 26 46 14 30 14Z"
+            />
 
-    <!-- stopka -->
-    <rect class="stem" x="26" y="4" width="8" height="12" rx="3"/>
+            <!-- žebra dýně -->
+            <path
+                class="rib"
+                d="M18 16 C14 26 14 44 18 52"
+            />
 
-    <!-- oči a pusa -->
-    <path class="face" d="M18 32 L24 38 L18 40Z"/>
-    <path class="face" d="M42 32 L36 38 L42 40Z"/>
-    <path class="face" d="M20 46 C26 42 34 42 40 46 C34 50 26 50 20 46Z"/>
+            <path
+                class="rib"
+                d="M42 16 C46 26 46 44 42 52"
+            />
 
-</svg>
-<h1>Halloween</h1>
-</div>
-    <audio id="audioA"></audio>
-<audio id="audioB"></audio>
+            <path
+                class="rib"
+                d="M30 14 L30 54"
+            />
 
+            <!-- stopka -->
+            <rect
+                class="stem"
+                x="26"
+                y="4"
+                width="8"
+                height="12"
+                rx="3"
+            />
+
+            <!-- oči -->
+            <path
+                class="face"
+                d="M18 32 L24 38 L18 40Z"
+            />
+
+            <path
+                class="face"
+                d="M42 32 L36 38 L42 40Z"
+            />
+
+            <!-- pusa -->
+            <path
+                class="face"
+                d="M20 46
+                   C26 42 34 42 40 46
+                   C34 50 26 50 20 46Z"
+            />
+
+        </svg>
+
+        <h1>Halloween</h1>
+
+    </div>
+
+
+    <!-- 💿 PŘEHRÁVAČ -->
     <div class="player-card">
 
         <div class="vinyl-wrapper">
+
             <div class="vinyl">
+
                 <div class="center-label"></div>
+
             </div>
 
-            <button id="play" class="play-btn">▶</button>
+            <button
+                id="play"
+                class="play-btn"
+            >
+                ▶
+            </button>
+
         </div>
 
-<div class="player-card">
 
-    <svg class="cobweb cobweb-left" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <g fill="none" stroke="rgba(230,222,240,0.4)" stroke-width="0.8">
-        <!-- radiální vlákna, mírně prohnutá -->
-        <path d="M0,0 Q10,20 6,45"/>
-        <path d="M0,0 Q20,15 22,42"/>
-        <path d="M0,0 Q28,10 42,22"/>
-        <path d="M0,0 Q15,28 45,15"/>
-        <path d="M0,0 L60,0"/>
-        <path d="M0,0 L0,60"/>
-
-        <!-- soustředné spirálovité oblouky -->
-        <path d="M6,0 Q9,9 0,12"/>
-        <path d="M14,0 Q20,20 0,26"/>
-        <path d="M24,0 Q34,34 0,42"/>
-        <path d="M36,0 Q50,50 0,56"/>
-    </g>
-</svg>
-
-<svg class="cobweb cobweb-right" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <g fill="none" stroke="rgba(230,222,240,0.35)" stroke-width="0.8">
-        <path d="M100,0 Q90,20 94,45"/>
-        <path d="M100,0 Q80,15 78,42"/>
-        <path d="M100,0 Q72,10 58,22"/>
-        <path d="M100,0 Q85,28 55,15"/>
-        <path d="M100,0 L40,0"/>
-        <path d="M100,0 L100,60"/>
-
-        <path d="M94,0 Q91,9 100,12"/>
-        <path d="M86,0 Q80,20 100,26"/>
-        <path d="M76,0 Q66,34 100,42"/>
-        <path d="M64,0 Q50,50 100,56"/>
-    </g>
-    </svg>
-
-    <div class="vinyl-wrapper">
-        
+        <!-- 🎵 Název skladby -->
         <div class="song-info">
-</div>
+        </div>
 
+
+        <!-- ⏱️ Progress bar -->
         <div class="progress-container">
+
             <div class="progress-bar">
-                <div id="progress-fill" class="progress-fill"></div>
+
+                <div
+                    id="progress-fill"
+                    class="progress-fill"
+                ></div>
+
             </div>
+
+
             <div class="time-labels">
-                <span id="current-time">00:00</span>
-                <span id="duration-time">00:00</span>
+
+                <span id="current-time">
+                    00:00
+                </span>
+
+                <span id="duration-time">
+                    00:00
+                </span>
+
             </div>
+
         </div>
 
     </div>
 
+
+    <!-- 🔊 Hlasitost -->
     <div class="volume-control">
+
         <button id="mute">
             🔊
         </button>
-        <input 
-            type="range" 
+
+        <input
+            type="range"
             id="volume"
             min="0"
             max="1"
             step="0.01"
             value="0.7"
         >
+
     </div>
+
 </div>
+
+
+<!-- 🎵 Script rádia s ochranou proti cache -->
 <script>
+
     var nebelScript = document.createElement('script');
-    nebelScript.src = "../template-radio/assets/script.js?t=" + Date.now();
+
+    nebelScript.src =
+        "../template-radio/assets/script.js?t=" + Date.now();
+
     document.body.appendChild(nebelScript);
+
 </script>
+
 </body>
 </html>
