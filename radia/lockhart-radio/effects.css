@@ -1,72 +1,239 @@
+/* ✨ Lockhart – třpyt, hvězdy a zlatá magie */
+
 body{
+    position:relative;
     overflow:hidden;
 }
 
-body::after{
-    content:"✨ ✨ ⭐ ✨ ⭐ ✨";
+/* Zlatá záře */
+
+body::before{
+
+    content:"";
+
     position:fixed;
-    inset:0;
-    font-size:28px;
-    opacity:.35;
-    animation:sparkles 25s linear infinite;
+    inset:-10%;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,235,160,.22), transparent 40%),
+        radial-gradient(circle at 80% 30%, rgba(255,220,120,.18), transparent 45%),
+        radial-gradient(circle at 50% 90%, rgba(255,255,255,.12), transparent 45%);
+
+    filter:blur(35px);
+
+    animation:goldGlow 16s ease-in-out infinite alternate;
+
     pointer-events:none;
+
+    z-index:0;
+
 }
 
-@keyframes sparkles{
+@keyframes goldGlow{
 
 0%{
-transform:translateY(100%);
+transform:translateX(-2%);
 }
 
 100%{
-transform:translateY(-100%);
+transform:translateX(2%);
 }
 
-  .radio::before{
+}
 
-content:"🪶";
+/* Plovoucí hvězdy */
 
-position:fixed;
+.radio{
+    position:relative;
+    z-index:2;
+}
 
-right:6%;
+.radio::before{
 
-top:10%;
+    content:"✨";
 
-font-size:40px;
+    position:fixed;
 
-animation:feather 12s ease-in-out infinite;
+    top:18%;
+    left:8%;
 
-opacity:.5;
+    font-size:26px;
+
+    opacity:.75;
+
+    animation:starFloat 8s ease-in-out infinite;
+
+    pointer-events:none;
 
 }
-@keyframes feather{
+
+.radio::after{
+
+    content:"⭐";
+
+    position:fixed;
+
+    top:35%;
+    right:10%;
+
+    font-size:20px;
+
+    opacity:.6;
+
+    animation:starFloat2 11s ease-in-out infinite;
+
+    pointer-events:none;
+
+}
+
+@keyframes starFloat{
 
 0%{
-transform:translateY(-30px) rotate(0deg);
+transform:translateY(0) rotate(0deg);
 }
 
 50%{
-transform:translateY(200px) rotate(25deg);
+transform:translateY(-20px) rotate(10deg);
 }
 
 100%{
-transform:translateY(420px) rotate(-20deg);
+transform:translateY(0) rotate(0deg);
 }
-.vinyl{
-    background:
-    repeating-radial-gradient(
-        circle,
-        #8a6a18 0px,
-        #c79b29 3px,
-        #8a6a18 5px
-    );
+
+}
+
+@keyframes starFloat2{
+
+0%{
+transform:translateY(0) rotate(0deg);
+}
+
+50%{
+transform:translateY(18px) rotate(-8deg);
+}
+
+100%{
+transform:translateY(0) rotate(0deg);
+}
+
+}
+
+/* Třpyt kolem přehrávače */
+
+.player-card{
+
+    position:relative;
+
+}
+
+.player-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-4px;
+
+    border-radius:inherit;
 
     box-shadow:
-        0 0 30px rgba(255,220,90,.35),
-        inset 0 0 20px rgba(80,45,0,.6);
+        0 0 18px rgba(255,225,120,.35),
+        0 0 35px rgba(255,240,180,.18);
+
+    animation:cardGlow 3s ease-in-out infinite;
+
+    pointer-events:none;
+
 }
 
-.center-label{
-    background:#fff7d8;
+@keyframes cardGlow{
+
+0%,100%{
+
+opacity:.55;
+
 }
+
+50%{
+
+opacity:1;
+
+}
+
+}
+
+/* Třpyt hvězdy */
+
+.star-glow{
+
+    animation:shine 3s ease-in-out infinite;
+
+}
+
+@keyframes shine{
+
+0%,100%{
+
+opacity:.25;
+
+transform:scale(1);
+
+}
+
+50%{
+
+opacity:.8;
+
+transform:scale(1.08);
+
+}
+
+}
+
+/* Vinyl lehce září */
+
+.vinyl{
+
+    animation:vinylGlow 4s ease-in-out infinite;
+
+}
+
+@keyframes vinylGlow{
+
+0%,100%{
+
+box-shadow:
+0 12px 30px rgba(0,0,0,.45),
+inset 0 0 18px rgba(0,0,0,.75),
+0 0 12px rgba(255,220,120,.18);
+
+}
+
+50%{
+
+box-shadow:
+0 12px 30px rgba(0,0,0,.45),
+inset 0 0 18px rgba(0,0,0,.75),
+0 0 28px rgba(255,220,120,.45);
+
+}
+
+}
+
+/* Mobil */
+
+@media(max-width:600px){
+
+.radio::before{
+
+font-size:18px;
+
+}
+
+.radio::after{
+
+font-size:16px;
+
+}
+
 }
