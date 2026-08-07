@@ -1,61 +1,30 @@
-<div class="title">
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radio Template</title>
+<link rel="stylesheet" id="nebelSharedStyle" href="">
+<script>
+    document.getElementById('nebelSharedStyle').href =
+        "style.css?t=" + Date.now();
+</script>
+</head>
+<body data-start="2026-07-24T08:25:00">
+<div class="radio">
+    <h1>RADIO</h1>
+    <audio id="audioA"></audio>
+<audio id="audioB"></audio>
 
-    <svg class="lockhart-star" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <div class="player-card">
 
-        <!-- záře -->
-        <circle class="star-glow" cx="32" cy="32" r="24"/>
-
-        <!-- velká hvězda -->
-        <path class="star"
-              d="M32 6
-                 L38 24
-                 L58 24
-                 L42 36
-                 L48 56
-                 L32 44
-                 L16 56
-                 L22 36
-                 L6 24
-                 L26 24 Z"/>
-
-        <!-- malá hvězda -->
-        <path class="star-small"
-              d="M52 10
-                 L54 16
-                 L60 16
-                 L55 20
-                 L57 26
-                 L52 22
-                 L47 26
-                 L49 20
-                 L44 16
-                 L50 16 Z"/>
-
-    </svg>
-
-   <div class="title">
-
-    <span class="sparkle">✨</span>
-
-    <h1>LOCKHART</h1>
-
-    <span class="sparkle">✨</span>
-
-</div>
-
-<div class="player-card">
-
-    <div class="ornament ornament-left">✦</div>
-    <div class="ornament ornament-right">✦</div>
-
-    <div class="vinyl-wrapper">
-        <div class="vinyl"> 
-            <div class="center-label"></div>
+        <div class="vinyl-wrapper">
+            <div class="vinyl">
+                <div class="center-label"></div>
             </div>
 
-        <button id="play" class="play-btn">▶</button>
-
-    </div>
+            <button id="play" class="play-btn">▶</button>
+        </div>
 
         <div class="song-info">
 </div>
@@ -88,7 +57,7 @@
 </div>
 <script>
     var nebelScript = document.createElement('script');
-    nebelScript.src = "../template-radio/assets/script.js?t=" + Date.now();
+    nebelScript.src = "/template-radio/assets/script.js?t=" + Date.now();
     document.body.appendChild(nebelScript);
 </script>
 </body>
