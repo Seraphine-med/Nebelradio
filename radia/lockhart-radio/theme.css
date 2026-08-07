@@ -1,41 +1,47 @@
-/* ✨ ZLATOSLAV LOCKHART */
+/* ✨ ZLATOSLAV LOCKHART – GOLDEN THEME */
 
 body {
-    background: #18243a;
+    background: #111a2e;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-/* Hlavní karta */
+
+/* HLAVNÍ KARTA */
 
 .radio {
     position: relative;
 
-    background: rgba(35, 45, 70, 0.55);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(72, 61, 35, 0.42),
+            rgba(28, 35, 55, 0.72)
+        );
 
-    border: 1px solid rgba(244, 211, 130, 0.65);
-
-    border-radius: 24px;
+    border: 2px solid rgba(218, 181, 91, 0.85);
 
     box-shadow:
-        0 10px 45px rgba(0, 0, 0, 0.35),
-        0 0 25px rgba(244, 211, 130, 0.12);
+        0 10px 50px rgba(0, 0, 0, 0.45),
+        0 0 25px rgba(218, 181, 91, 0.18),
+        inset 0 0 25px rgba(255, 220, 140, 0.05);
 
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
 }
 
 
-/* Zlatý ornamentální rámeček */
+/* VNITŘNÍ ZLATÝ RÁMEČEK */
 
 .radio::before {
     content: "";
 
     position: absolute;
+
     inset: 10px;
 
-    border: 1px solid rgba(244, 211, 130, 0.25);
+    border: 1px solid rgba(218, 181, 91, 0.45);
 
     border-radius: 18px;
 
@@ -43,97 +49,117 @@ body {
 }
 
 
-/* Nadpis */
+/* NADPIS */
 
 h1 {
-    color: #f4dfaa;
+    color: #f7df9b;
 
     font-weight: 500;
 
     letter-spacing: 3px;
 
     text-shadow:
-        0 0 8px rgba(244, 211, 130, 0.35),
-        0 2px 10px rgba(0, 0, 0, 0.45);
+        0 0 8px rgba(255, 215, 120, 0.45),
+        0 0 20px rgba(218, 181, 91, 0.18),
+        0 3px 10px rgba(0, 0, 0, 0.5);
 }
 
 
-/* Ozdobná karta přehrávače */
+/* PLAYER CARD */
 
 .player-card {
     position: relative;
 
-    background: rgba(255, 255, 255, 0.12);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(218, 181, 91, 0.16),
+            rgba(255, 255, 255, 0.09)
+        );
 
-    border: 1px solid rgba(244, 211, 130, 0.35);
+    border: 1px solid rgba(218, 181, 91, 0.65);
 
     box-shadow:
-        inset 0 0 20px rgba(255, 255, 255, 0.03),
-        0 0 18px rgba(244, 211, 130, 0.06);
+        0 0 25px rgba(218, 181, 91, 0.10),
+        inset 0 0 20px rgba(255, 220, 140, 0.04);
 }
 
 
-/* Zlaté rohy */
-
-.player-card::before,
-.player-card::after {
-    position: absolute;
-
-    color: rgba(244, 211, 130, 0.7);
-
-    font-size: 18px;
-
-    pointer-events: none;
-}
+/* ZLATÉ ROHY */
 
 .player-card::before {
     content: "✦";
+
+    position: absolute;
+
     top: 8px;
-    left: 10px;
+    left: 12px;
+
+    color: #e6c36a;
+
+    font-size: 18px;
+
+    text-shadow:
+        0 0 8px rgba(255, 215, 120, 0.8);
 }
+
 
 .player-card::after {
     content: "✦";
+
+    position: absolute;
+
     top: 8px;
-    right: 10px;
+    right: 12px;
+
+    color: #e6c36a;
+
+    font-size: 18px;
+
+    text-shadow:
+        0 0 8px rgba(255, 215, 120, 0.8);
 }
 
 
-/* Progress bar */
+/* ČAS */
+
+.time-labels {
+    color: #f5d98f;
+
+    text-shadow:
+        0 1px 6px rgba(0, 0, 0, 0.45);
+}
+
+
+/* PROGRESS BAR */
 
 .progress-bar {
-    background: rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.18);
 }
 
 .progress-fill {
-    background: #f4dfaa;
+    background: #fff;
 
     box-shadow:
-        0 0 8px rgba(244, 223, 170, 0.9),
-        0 0 18px rgba(244, 211, 130, 0.55);
+        0 0 8px rgba(255, 255, 255, 1),
+        0 0 18px rgba(255, 235, 180, 0.75),
+        0 0 30px rgba(218, 181, 91, 0.45);
 }
 
 
-/* Čas */
-
-.time-labels {
-    color: #f4dfaa;
-
-    text-shadow:
-        0 1px 5px rgba(0, 0, 0, 0.45);
-}
-
-
-/* Hlasitost */
+/* HLASITOST */
 
 #volume {
-    accent-color: #f4dfaa;
+    accent-color: #f4d98a;
 }
 
 #mute {
-    background: rgba(244, 211, 130, 0.15);
+    background: rgba(218, 181, 91, 0.18);
 
-    color: #f4dfaa;
+    color: #f7df9b;
 
-    border: 1px solid rgba(244, 211, 130, 0.25);
+    border: 1px solid rgba(218, 181, 91, 0.5);
+
+    box-shadow:
+        0 0 12px rgba(218, 181, 91, 0.10);
 }
