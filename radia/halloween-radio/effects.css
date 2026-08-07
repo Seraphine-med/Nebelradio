@@ -77,34 +77,6 @@ body::after {
     100% { transform: translate(0, 0) rotate(0deg); }
 }
 
-/* Pavučiny v rozích */
-.player-card {
-    position: relative;
-}
-.player-card::before,
-.player-card::after {
-    content: "";
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background:
-        repeating-conic-gradient(from 0deg,
-            rgba(220, 210, 230, 0.25) 0deg 4deg,
-            transparent 4deg 30deg);
-    border-radius: 0 0 100% 0;
-    opacity: 0.5;
-    pointer-events: none;
-}
-.player-card::before {
-    top: -6px;
-    left: -6px;
-}
-.player-card::after {
-    top: -6px;
-    right: -6px;
-    transform: scaleX(-1);
-}
-
 /* Jemné mihotání dýně */
 @keyframes pumpkinFlicker {
     0%, 100% { opacity: 1; }
@@ -126,10 +98,5 @@ body::after {
     .radio::before,
     .radio::after {
         font-size: 14px;
-    }
-    .player-card::before,
-    .player-card::after {
-        width: 40px;
-        height: 40px;
     }
 }
