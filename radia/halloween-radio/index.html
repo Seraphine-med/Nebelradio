@@ -3,16 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Radio Template</title>
+<title>🎃 Halloween</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" id="nebelSharedStyle" href="">
 <script>
     document.getElementById('nebelSharedStyle').href =
         "../template-radio/style.css?t=" + Date.now();
 </script>
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="effects.css">
 </head>
 <body data-start="2026-07-24T08:25:00">
 <div class="radio">
-    <h1>RADIO</h1>
+    <div class="title">
+<svg class="pumpkin" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+
+    <!-- záře -->
+    <ellipse class="glow" cx="30" cy="34" rx="22" ry="20"/>
+
+    <!-- tělo dýně -->
+    <path class="pumpkin-body"
+          d="M30 14
+             C14 14 8 26 8 36
+             C8 48 18 54 30 54
+             C42 54 52 48 52 36
+             C52 26 46 14 30 14Z"/>
+
+    <!-- žebra dýně -->
+    <path class="rib" d="M18 16 C14 26 14 44 18 52"/>
+    <path class="rib" d="M42 16 C46 26 46 44 42 52"/>
+    <path class="rib" d="M30 14 L30 54"/>
+
+    <!-- stopka -->
+    <rect class="stem" x="26" y="4" width="8" height="12" rx="3"/>
+
+    <!-- oči a pusa -->
+    <path class="face" d="M18 32 L24 38 L18 40Z"/>
+    <path class="face" d="M42 32 L36 38 L42 40Z"/>
+    <path class="face" d="M20 46 C26 42 34 42 40 46 C34 50 26 50 20 46Z"/>
+
+</svg>
+<h1>Halloween</h1>
+</div>
     <audio id="audioA"></audio>
 <audio id="audioB"></audio>
 
