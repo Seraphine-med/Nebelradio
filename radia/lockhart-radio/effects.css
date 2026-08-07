@@ -99,3 +99,109 @@
     box-shadow:
         0 0 15px rgba(255,215,120,.25);
 }
+/* ✨ MAGICKÉ EFEKTY – LOCKHART */
+
+
+/* Zlatá aura kolem rádia */
+
+.radio {
+    animation: goldenAura 5s ease-in-out infinite;
+}
+
+@keyframes goldenAura {
+
+    0%, 100% {
+        box-shadow:
+            0 10px 45px rgba(0,0,0,.35),
+            0 0 25px rgba(244,211,130,.10);
+    }
+
+    50% {
+        box-shadow:
+            0 10px 45px rgba(0,0,0,.35),
+            0 0 38px rgba(244,211,130,.22);
+    }
+
+}
+
+
+/* ✦ Ozdobné jiskry */
+
+.radio::after {
+    content:
+        "✦        ✧        ✦";
+
+    position: absolute;
+
+    top: 8px;
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: rgba(244,211,130,.55);
+
+    font-size: 12px;
+
+    letter-spacing: 7px;
+
+    pointer-events: none;
+
+    animation: sparkle 3s ease-in-out infinite;
+}
+
+
+@keyframes sparkle {
+
+    0%,100% {
+        opacity: .25;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: .85;
+        transform: translateY(-2px);
+    }
+
+}
+
+
+/* ✨ Jemné hvězdičky dole */
+
+.volume-control::before {
+    content: "✧  ✦  ✧";
+
+    position: absolute;
+
+    margin-top: 72px;
+
+    color: rgba(244,211,130,.35);
+
+    font-size: 11px;
+
+    letter-spacing: 8px;
+
+    pointer-events: none;
+}
+
+
+/* Zlatý hover na mute */
+
+#mute:hover {
+
+    box-shadow:
+        0 0 12px rgba(244,211,130,.25);
+
+    transform: scale(1.05);
+}
+
+
+/* Zlatý hover na slider */
+
+#volume:hover {
+
+    filter:
+        drop-shadow(0 0 5px rgba(244,211,130,.35));
+
+}
