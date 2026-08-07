@@ -1,149 +1,101 @@
-/* ✨ Lockhart – zlaté jiskry a jemná magie */
+/* ✨ ZLATOSLAV LOCKHART – MAGICKÉ EFEKTY */
 
-body{
-    position:relative;
-    overflow:hidden;
+/* Jemné zlaté světlo kolem rádia */
+
+.radio {
+    animation: goldenGlow 4s ease-in-out infinite;
 }
 
-/* Zlatá záře na pozadí */
-body::before{
-    content:"";
-    position:fixed;
-    inset:-10%;
-    background:
-        radial-gradient(circle at 20% 20%, rgba(255,235,160,.22), transparent 40%),
-        radial-gradient(circle at 80% 30%, rgba(255,220,120,.18), transparent 45%),
-        radial-gradient(circle at 50% 90%, rgba(255,255,255,.12), transparent 45%);
-    filter:blur(35px);
-    animation:goldGlow 16s ease-in-out infinite alternate;
-    pointer-events:none;
-    z-index:0;
-}
-
-@keyframes goldGlow{
-    from{
-        transform:translateX(-2%);
+@keyframes goldenGlow {
+    0%, 100% {
+        box-shadow:
+            0 8px 40px rgba(0, 0, 0, 0.3),
+            0 0 25px rgba(255, 210, 100, 0.10);
     }
-    to{
-        transform:translateX(2%);
+
+    50% {
+        box-shadow:
+            0 8px 40px rgba(0, 0, 0, 0.3),
+            0 0 40px rgba(255, 210, 100, 0.22);
     }
 }
 
-/* Rádio nad efekty */
-.radio{
-    position:relative;
-    z-index:2;
+
+/* Jemné magické jiskry kolem karty */
+
+.player-card {
+    position: relative;
 }
 
-/* Plovoucí zlaté jiskry */
-.radio::before{
-    content:"✨";
-    position:fixed;
-    top:18%;
-    left:8%;
-    font-size:28px;
-    opacity:.75;
-    animation:sparkleLeft 8s ease-in-out infinite;
-    pointer-events:none;
+.player-card::after {
+    content: "✦  ✧  ✦";
+    position: absolute;
+    top: -18px;
+    right: 12px;
+
+    color: rgba(255, 225, 140, 0.65);
+    font-size: 13px;
+    letter-spacing: 7px;
+
+    pointer-events: none;
+
+    animation: sparkle 3s ease-in-out infinite;
 }
 
-.radio::after{
-    content:"✨";
-    position:fixed;
-    top:35%;
-    right:10%;
-    font-size:22px;
-    opacity:.6;
-    animation:sparkleRight 11s ease-in-out infinite;
-    pointer-events:none;
-}
-
-@keyframes sparkleLeft{
-    0%,100%{
-        transform:translateY(0) rotate(0deg);
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0.25;
+        transform: translateY(2px);
     }
-    50%{
-        transform:translateY(-18px) rotate(10deg);
+
+    50% {
+        opacity: 0.8;
+        transform: translateY(-3px);
     }
 }
 
-@keyframes sparkleRight{
-    0%,100%{
-        transform:translateY(0) rotate(0deg);
-    }
-    50%{
-        transform:translateY(16px) rotate(-8deg);
-    }
-}
 
-/* Jemná záře kolem přehrávače */
-.player-card::before{
-    content:"";
-    position:absolute;
-    inset:-5px;
-    border-radius:inherit;
+/* Jemné zlaté světlo pod přehrávačem */
+
+.player-card::before {
+    content: "";
+    position: absolute;
+    inset: -5px;
+
+    border-radius: inherit;
+
     box-shadow:
-        0 0 20px rgba(255,220,120,.35),
-        0 0 40px rgba(255,240,180,.18);
-    animation:cardGlow 3.5s ease-in-out infinite;
-    pointer-events:none;
+        0 0 25px rgba(255, 210, 100, 0.12);
+
+    pointer-events: none;
+
+    animation: cardGlow 3.5s ease-in-out infinite;
 }
 
-@keyframes cardGlow{
-    0%,100%{
-        opacity:.5;
+@keyframes cardGlow {
+    0%, 100% {
+        opacity: 0.5;
     }
-    50%{
-        opacity:1;
-    }
-}
 
-/* Třpytění ikon ✨ v nadpisu */
-.sparkle{
-    animation:titleSparkle 3s ease-in-out infinite;
-}
-
-@keyframes titleSparkle{
-    0%,100%{
-        transform:scale(1);
-        opacity:.7;
-    }
-    50%{
-        transform:scale(1.2);
-        opacity:1;
+    50% {
+        opacity: 1;
     }
 }
 
-/* Vinyl lehce září */
-.vinyl{
-    animation:vinylGlow 4s ease-in-out infinite;
+
+/* Hover efekt na play button */
+
+.play-btn:hover {
+    box-shadow:
+        0 8px 24px rgba(0,0,0,.25),
+        0 0 20px rgba(255,255,255,.35),
+        0 0 25px rgba(255,215,120,.35);
 }
 
-@keyframes vinylGlow{
-    0%,100%{
-        box-shadow:
-            0 12px 30px rgba(0,0,0,.45),
-            inset 0 0 18px rgba(0,0,0,.75),
-            0 0 12px rgba(255,220,120,.18);
-    }
 
-    50%{
-        box-shadow:
-            0 12px 30px rgba(0,0,0,.45),
-            inset 0 0 18px rgba(0,0,0,.75),
-            0 0 28px rgba(255,220,120,.45);
-    }
-}
+/* Hover efekt na mute */
 
-/* Mobil */
-@media(max-width:600px){
-
-    .radio::before{
-        font-size:18px;
-    }
-
-    .radio::after{
-        font-size:16px;
-    }
-
+#mute:hover {
+    box-shadow:
+        0 0 15px rgba(255,215,120,.25);
 }
