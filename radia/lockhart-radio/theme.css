@@ -1,1 +1,49 @@
+body{
+    background-image:url("assets/lockhart.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
 
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:rgba(35,20,60,.35);
+    z-index:-1;
+}
+
+.radio{
+    background:rgba(255,245,225,.20);
+    border:1px solid rgba(255,220,140,.6);
+    box-shadow:
+        0 0 30px rgba(255,220,120,.35),
+        0 15px 40px rgba(0,0,0,.35);
+}
+
+.player-card{
+    background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,230,170,.45);
+}
+
+h1{
+    color:#ffe7a5;
+    text-shadow:
+        0 0 15px rgba(255,220,100,.7),
+        0 0 40px rgba(255,180,60,.3);
+}
+
+.progress-fill{
+    background:#ffd96b;
+    box-shadow:0 0 12px #ffd96b;
+}
+
+#volume{
+    accent-color:#ffd96b;
+}
+
+#mute{
+    background:rgba(255,215,120,.18);
+    color:#ffe7a5;
+}
