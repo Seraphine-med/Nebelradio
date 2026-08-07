@@ -1,1 +1,101 @@
+/* ✨ ZLATOSLAV LOCKHART – MAGICKÉ EFEKTY */
 
+/* Jemné zlaté světlo kolem rádia */
+
+.radio {
+    animation: goldenGlow 4s ease-in-out infinite;
+}
+
+@keyframes goldenGlow {
+    0%, 100% {
+        box-shadow:
+            0 8px 40px rgba(0, 0, 0, 0.3),
+            0 0 25px rgba(255, 210, 100, 0.10);
+    }
+
+    50% {
+        box-shadow:
+            0 8px 40px rgba(0, 0, 0, 0.3),
+            0 0 40px rgba(255, 210, 100, 0.22);
+    }
+}
+
+
+/* Jemné magické jiskry kolem karty */
+
+.player-card {
+    position: relative;
+}
+
+.player-card::after {
+    content: "✦  ✧  ✦";
+    position: absolute;
+    top: -18px;
+    right: 12px;
+
+    color: rgba(255, 225, 140, 0.65);
+    font-size: 13px;
+    letter-spacing: 7px;
+
+    pointer-events: none;
+
+    animation: sparkle 3s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0.25;
+        transform: translateY(2px);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: translateY(-3px);
+    }
+}
+
+
+/* Jemné zlaté světlo pod přehrávačem */
+
+.player-card::before {
+    content: "";
+    position: absolute;
+    inset: -5px;
+
+    border-radius: inherit;
+
+    box-shadow:
+        0 0 25px rgba(255, 210, 100, 0.12);
+
+    pointer-events: none;
+
+    animation: cardGlow 3.5s ease-in-out infinite;
+}
+
+@keyframes cardGlow {
+    0%, 100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* Hover efekt na play button */
+
+.play-btn:hover {
+    box-shadow:
+        0 8px 24px rgba(0,0,0,.25),
+        0 0 20px rgba(255,255,255,.35),
+        0 0 25px rgba(255,215,120,.35);
+}
+
+
+/* Hover efekt na mute */
+
+#mute:hover {
+    box-shadow:
+        0 0 15px rgba(255,215,120,.25);
+}
