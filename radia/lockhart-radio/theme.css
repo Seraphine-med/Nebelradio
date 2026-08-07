@@ -1,128 +1,88 @@
-/* ✨ Lockhart – zlatá elegance */
+/* ✨ ZLATOSLAV LOCKHART – VIZUÁLNÍ TÉMA */
 
-body{
-    background-color:#f8f2dc;
-    background-image:
-        radial-gradient(circle at 20% 15%, rgba(255,245,180,.35) 0%, transparent 40%),
-        radial-gradient(circle at 80% 20%, rgba(255,220,120,.18) 0%, transparent 45%),
-        radial-gradient(circle at 50% 90%, rgba(255,255,255,.18) 0%, transparent 45%),
-        linear-gradient(180deg,#fdf9ef 0%, #ead6a0 100%);
+body {
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(255, 240, 190, 0.18),
+            transparent 45%
+        ),
+        #17243a;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-/* hlavní karta */
+/* Hlavní rádio */
 
-.radio{
-    background:rgba(255,255,250,.45);
-    border:1px solid rgba(205,168,65,.45);
+.radio {
+    background: rgba(245, 238, 220, 0.18);
+    border: 1px solid rgba(255, 220, 130, 0.55);
+
     box-shadow:
-        0 0 45px rgba(205,168,65,.18),
-        0 10px 35px rgba(0,0,0,.18);
+        0 8px 40px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(255, 210, 100, 0.12);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 }
 
-/* přehrávač */
+/* Nadpis */
 
-.player-card{
-    position:relative;
-    background:rgba(255,255,255,.35);
-    border:1px solid rgba(205,168,65,.25);
-}
+h1 {
+    color: #f8e6b0;
 
-/* nadpis */
-
-.title{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:14px;
-}
-
-h1{
-    font-family:'Cinzel',serif;
-    font-weight:700;
-    color:#b88b14;
-    letter-spacing:5px;
     text-shadow:
-        0 0 12px rgba(255,220,120,.8),
-        0 2px 8px rgba(0,0,0,.2);
+        0 0 10px rgba(255, 220, 130, 0.35),
+        0 2px 10px rgba(0, 0, 0, 0.4);
+
+    font-weight: 600;
+    letter-spacing: 3px;
 }
 
-/* jiskry */
+/* Karta přehrávače */
 
-.sparkle{
-    font-size:28px;
-    color:#d4af37;
-}
+.player-card {
+    background: rgba(255, 248, 225, 0.14);
+    border: 1px solid rgba(255, 225, 150, 0.35);
 
-/* ornamenty */
-
-.ornament{
-    position:absolute;
-    top:10px;
-    font-size:20px;
-    color:#d4af37;
-    opacity:.7;
-}
-
-.ornament-left{
-    left:14px;
-}
-
-.ornament-right{
-    right:14px;
-}
-
-/* vinyl */
-
-.vinyl{
     box-shadow:
-        0 12px 30px rgba(0,0,0,.45),
-        inset 0 0 18px rgba(0,0,0,.75),
-        0 0 16px rgba(255,220,100,.25);
+        inset 0 0 20px rgba(255, 220, 130, 0.05);
 }
 
-.center-label{
-    background:linear-gradient(
-        135deg,
-        #fffdf7,
-        #ecd487
-    );
+/* Progress bar */
+
+.progress-bar {
+    background: rgba(255, 255, 255, 0.2);
 }
 
-/* tlačítko */
+.progress-fill {
+    background: #f6d77a;
 
-.play-btn{
-    background:rgba(255,250,225,.25);
-    border:3px solid rgba(212,175,55,.8);
-    color:#b48716;
-    box-shadow:0 0 18px rgba(255,225,120,.45);
+    box-shadow:
+        0 0 8px rgba(255, 220, 120, 0.9),
+        0 0 18px rgba(255, 210, 100, 0.5);
 }
 
-.play-btn:hover{
-    background:rgba(255,245,200,.5);
+/* Časy */
+
+.time-labels {
+    color: #f8e6b0;
+
+    text-shadow:
+        0 1px 6px rgba(0, 0, 0, 0.4);
 }
 
-/* progress */
+/* Hlasitost */
 
-.progress-bar{
-    background:rgba(205,168,65,.18);
+#volume {
+    accent-color: #f6d77a;
 }
 
-.progress-fill{
-    background:#d4af37;
-    box-shadow:0 0 10px rgba(255,220,120,.9);
-}
+#mute {
+    background: rgba(255, 220, 130, 0.18);
+    color: #f8e6b0;
 
-.time-labels{
-    color:#7d6517;
-}
-
-/* hlasitost */
-
-#volume{
-    accent-color:#d4af37;
-}
-
-#mute{
-    background:rgba(212,175,55,.18);
-    color:#9d7608;
+    border: 1px solid rgba(255, 220, 130, 0.25);
 }
