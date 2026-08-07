@@ -1,30 +1,75 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Radio Template</title>
-<link rel="stylesheet" id="nebelSharedStyle" href="">
-<script>
-    document.getElementById('nebelSharedStyle').href =
-        "../template-radio/style.css?t=" + Date.now();
-</script>
-</head>
-<body data-start="2026-07-24T08:25:00">
-<div class="radio">
-    <h1>RADIO</h1>
-    <audio id="audioA"></audio>
-<audio id="audioB"></audio>
+<div class="title">
 
-    <div class="player-card">
+    <svg class="lockhart-star" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
 
-        <div class="vinyl-wrapper">
-            <div class="vinyl">
-                <div class="center-label"></div>
-            </div>
+        <!-- záře -->
+        <circle class="star-glow" cx="32" cy="32" r="24"/>
 
-            <button id="play" class="play-btn">▶</button>
+        <!-- velká hvězda -->
+        <path class="star"
+              d="M32 6
+                 L38 24
+                 L58 24
+                 L42 36
+                 L48 56
+                 L32 44
+                 L16 56
+                 L22 36
+                 L6 24
+                 L26 24 Z"/>
+
+        <!-- malá hvězda -->
+        <path class="star-small"
+              d="M52 10
+                 L54 16
+                 L60 16
+                 L55 20
+                 L57 26
+                 L52 22
+                 L47 26
+                 L49 20
+                 L44 16
+                 L50 16 Z"/>
+
+    </svg>
+
+    <h1>LOCKHART</h1>
+
+</div>
+
+<div class="player-card">
+
+    <!-- levý ornament -->
+    <svg class="ornament ornament-left" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+
+        <path d="M90 10
+                 C55 10 55 45 90 45
+                 C70 45 62 58 70 72
+                 C58 66 46 70 40 84"
+              fill="none"/>
+
+    </svg>
+
+    <!-- pravý ornament -->
+    <svg class="ornament ornament-right" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+
+        <path d="M10 10
+                 C45 10 45 45 10 45
+                 C30 45 38 58 30 72
+                 C42 66 54 70 60 84"
+              fill="none"/>
+
+    </svg>
+
+    <div class="vinyl-wrapper">
+
+        <div class="vinyl">
+            <div class="center-label"></div>
         </div>
+
+        <button id="play" class="play-btn">▶</button>
+
+    </div>
 
         <div class="song-info">
 </div>
