@@ -34,36 +34,6 @@ body::before {
     z-index: 1;
 }
 
-/* Plovoucí knihy "napsané jím" */
-.radio::before {
-    content: "📖";
-    position: fixed;
-    top: 12%;
-    left: 8%;
-    font-size: 24px;
-    opacity: 0.55;
-    animation: bookFloat 11s ease-in-out infinite;
-    pointer-events: none;
-    z-index: 0;
-    filter: drop-shadow(0 0 6px rgba(255,215,140,0.5));
-}
-.radio::after {
-    content: "📗";
-    position: fixed;
-    top: 65%;
-    right: 9%;
-    font-size: 20px;
-    opacity: 0.5;
-    animation: bookFloat 14s ease-in-out infinite reverse;
-    pointer-events: none;
-    z-index: 0;
-    filter: drop-shadow(0 0 6px rgba(220,180,255,0.5));
-}
-
-@keyframes bookFloat {
-    0%, 100% { transform: translateY(0) rotate(-4deg); }
-    50%      { transform: translateY(-14px) rotate(4deg); }
-}
 
 /* Drobný, opakovaný "spadlý třpyt" na okrajích karty */
 .player-card::before,
@@ -93,8 +63,4 @@ body::before {
 
 /* 📱 Mobil */
 @media (max-width: 600px) {
-    .radio::before,
-    .radio::after {
-        font-size: 16px;
-    }
 }
