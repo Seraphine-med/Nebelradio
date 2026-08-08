@@ -1,298 +1,100 @@
-/* ✨ ZLATOSLAV LOCKHART – MAGICKÉ EFEKTY */
+/* ✨ Lockhart – třpyt, plovoucí knihy, jemná záře */
 
-/* Jemné zlaté světlo kolem rádia */
-
-.radio {
-    animation: goldenGlow 4s ease-in-out infinite;
-}
-
-@keyframes goldenGlow {
-    0%, 100% {
-        box-shadow:
-            0 8px 40px rgba(0, 0, 0, 0.3),
-            0 0 25px rgba(255, 210, 100, 0.10);
-    }
-
-    50% {
-        box-shadow:
-            0 8px 40px rgba(0, 0, 0, 0.3),
-            0 0 40px rgba(255, 210, 100, 0.22);
-    }
-}
-
-
-/* Jemné magické jiskry kolem karty */
-
-.player-card {
+body {
     position: relative;
+    overflow: hidden;
 }
 
-.player-card::after {
-    content: "✦  ✧  ✦";
-    position: absolute;
-    top: -18px;
-    right: 12px;
-
-    color: rgba(255, 225, 140, 0.65);
-    font-size: 13px;
-    letter-spacing: 7px;
-
-    pointer-events: none;
-
-    animation: sparkle 3s ease-in-out infinite;
-}
-
-@keyframes sparkle {
-    0%, 100% {
-        opacity: 0.25;
-        transform: translateY(2px);
-    }
-
-    50% {
-        opacity: 0.8;
-        transform: translateY(-3px);
-    }
-}
-
-
-/* Jemné zlaté světlo pod přehrávačem */
-
-.player-card::before {
+/* Jemný "třpytivý" povrch pozadí - drobné mihotající tečky */
+body::before {
     content: "";
-    position: absolute;
-    inset: -5px;
-
-    border-radius: inherit;
-
-    box-shadow:
-        0 0 25px rgba(255, 210, 100, 0.12);
-
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(1.5px 1.5px at 15% 25%, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1.5px 1.5px at 70% 15%, rgba(255,255,255,0.7), transparent),
+        radial-gradient(1.5px 1.5px at 85% 55%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1.5px 1.5px at 30% 70%, rgba(255,255,255,0.7), transparent),
+        radial-gradient(1.5px 1.5px at 55% 85%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1.5px 1.5px at 10% 90%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1.5px 1.5px at 90% 30%, rgba(255,255,255,0.6), transparent);
+    animation: twinkle 3.5s ease-in-out infinite alternate;
     pointer-events: none;
-
-    animation: cardGlow 3.5s ease-in-out infinite;
+    z-index: 0;
 }
 
-@keyframes cardGlow {
-    0%, 100% {
-        opacity: 0.5;
-    }
-
-    50% {
-        opacity: 1;
-    }
+@keyframes twinkle {
+    0%   { opacity: 0.3; }
+    50%  { opacity: 0.9; }
+    100% { opacity: 0.4; }
 }
-
-
-/* Hover efekt na play button */
-
-.play-btn:hover {
-    box-shadow:
-        0 8px 24px rgba(0,0,0,.25),
-        0 0 20px rgba(255,255,255,.35),
-        0 0 25px rgba(255,215,120,.35);
-}
-
-
-/* Hover efekt na mute */
-
-#mute:hover {
-    box-shadow:
-        0 0 15px rgba(255,215,120,.25);
-}
-/* ✨ MAGICKÉ EFEKTY – LOCKHART */
-
-
-/* Zlatá aura kolem rádia */
 
 .radio {
-    animation: goldenAura 5s ease-in-out infinite;
-}
-
-@keyframes goldenAura {
-
-    0%, 100% {
-        box-shadow:
-            0 10px 45px rgba(0,0,0,.35),
-            0 0 25px rgba(244,211,130,.10);
-    }
-
-    50% {
-        box-shadow:
-            0 10px 45px rgba(0,0,0,.35),
-            0 0 38px rgba(244,211,130,.22);
-    }
-
-}
-
-
-/* ✦ Ozdobné jiskry */
-
-.radio::after {
-    content:
-        "✦        ✧        ✦";
-
-    position: absolute;
-
-    top: 8px;
-    left: 0;
-
-    width: 100%;
-
-    text-align: center;
-
-    color: rgba(244,211,130,.55);
-
-    font-size: 12px;
-
-    letter-spacing: 7px;
-
-    pointer-events: none;
-
-    animation: sparkle 3s ease-in-out infinite;
-}
-
-
-@keyframes sparkle {
-
-    0%,100% {
-        opacity: .25;
-        transform: translateY(0);
-    }
-
-    50% {
-        opacity: .85;
-        transform: translateY(-2px);
-    }
-
-}
-
-
-/* ✨ Jemné hvězdičky dole */
-
-.volume-control::before {
-    content: "✧  ✦  ✧";
-
-    position: absolute;
-
-    margin-top: 72px;
-
-    color: rgba(244,211,130,.35);
-
-    font-size: 11px;
-
-    letter-spacing: 8px;
-
-    pointer-events: none;
-}
-
-
-/* Zlatý hover na mute */
-
-#mute:hover {
-
-    box-shadow:
-        0 0 12px rgba(244,211,130,.25);
-
-    transform: scale(1.05);
-}
-
-
-/* Zlatý hover na slider */
-
-#volume:hover {
-
-    filter:
-        drop-shadow(0 0 5px rgba(244,211,130,.35));
-
-}
-/* ✨ LOCKHART – GOLDEN MAGIC */
-
-.radio {
-    animation: goldenAura 4s ease-in-out infinite;
-}
-
-@keyframes goldenAura {
-
-    0%, 100% {
-        box-shadow:
-            0 10px 50px rgba(0,0,0,.45),
-            0 0 25px rgba(218,181,91,.12);
-    }
-
-    50% {
-        box-shadow:
-            0 10px 50px rgba(0,0,0,.45),
-            0 0 42px rgba(218,181,91,.28),
-            0 0 70px rgba(218,181,91,.08);
-    }
-}
-
-
-/* ✦ MAGICKÉ JISKRY */
-
-.radio::after {
-    content: "✦     ✧     ✦";
-
-    position: absolute;
-
-    top: 8px;
-    left: 0;
-
-    width: 100%;
-
-    text-align: center;
-
-    color: rgba(244, 210, 125, 0.7);
-
-    font-size: 12px;
-
-    letter-spacing: 7px;
-
-    pointer-events: none;
-
-    animation: sparkle 3s ease-in-out infinite;
-}
-
-@keyframes sparkle {
-
-    0%, 100% {
-        opacity: .3;
-    }
-
-    50% {
-        opacity: 1;
-        text-shadow:
-            0 0 8px rgba(255,220,130,.8);
-    }
-}
-
-
-/* ✨ MALÉ ZLATÉ JISKRY DOLE */
-
-.volume-control {
     position: relative;
+    z-index: 1;
 }
 
-.volume-control::after {
-    content: "✧  ✦  ✧";
-
-    position: absolute;
-
-    bottom: -25px;
-
-    left: 0;
-
-    width: 100%;
-
-    text-align: center;
-
-    color: rgba(218,181,91,.45);
-
-    font-size: 11px;
-
-    letter-spacing: 8px;
-
+/* Plovoucí knihy "napsané jím" */
+.radio::before {
+    content: "📖";
+    position: fixed;
+    top: 12%;
+    left: 8%;
+    font-size: 24px;
+    opacity: 0.55;
+    animation: bookFloat 11s ease-in-out infinite;
     pointer-events: none;
+    z-index: 0;
+    filter: drop-shadow(0 0 6px rgba(255,215,140,0.5));
+}
+.radio::after {
+    content: "📗";
+    position: fixed;
+    top: 65%;
+    right: 9%;
+    font-size: 20px;
+    opacity: 0.5;
+    animation: bookFloat 14s ease-in-out infinite reverse;
+    pointer-events: none;
+    z-index: 0;
+    filter: drop-shadow(0 0 6px rgba(220,180,255,0.5));
+}
 
-    animation: sparkle 4s ease-in-out infinite;
+@keyframes bookFloat {
+    0%, 100% { transform: translateY(0) rotate(-4deg); }
+    50%      { transform: translateY(-14px) rotate(4deg); }
+}
+
+/* Drobný, opakovaný "spadlý třpyt" na okrajích karty */
+.player-card::before,
+.player-card::after {
+    content: "✨";
+    position: absolute;
+    font-size: 16px;
+    opacity: 0.5;
+    pointer-events: none;
+    animation: sparkleFade 4s ease-in-out infinite;
+}
+.player-card::before {
+    top: 6px;
+    left: 6px;
+    animation-delay: 0s;
+}
+.player-card::after {
+    top: 6px;
+    right: 6px;
+    animation-delay: 2s;
+}
+
+@keyframes sparkleFade {
+    0%, 100% { opacity: 0.15; transform: scale(0.8); }
+    50%      { opacity: 0.7; transform: scale(1.1); }
+}
+
+/* 📱 Mobil */
+@media (max-width: 600px) {
+    .radio::before,
+    .radio::after {
+        font-size: 16px;
+    }
 }
