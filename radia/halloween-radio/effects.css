@@ -100,123 +100,67 @@ body::after {
 }
 
 
-/* 🦇 Netopýři */
-
+/* Plovoucí pavouci - spouští se na vlákně */
 .radio::before {
-    content: "🦇";
-
+    content: "🕷️";
     position: fixed;
-
-    top: 15%;
-    left: 8%;
-
-    font-size: 22px;
-
-    opacity: 0.55;
-
-    animation:
-        batFly 9s ease-in-out infinite;
-
+    top: -5%;
+    left: 12%;
+    font-size: 20px;
+    opacity: 0.6;
+    animation: spiderDrop 10s ease-in-out infinite;
     pointer-events: none;
-
-    z-index: 2;
+    z-index: 0;
 }
-
-
 .radio::after {
-    content: "🦇";
-
+    content: "🕷️";
     position: fixed;
-
-    top: 30%;
-    right: 10%;
-
-    font-size: 16px;
-
-    opacity: 0.4;
-
-    animation:
-        batFly 12s ease-in-out infinite reverse;
-
+    top: -5%;
+    right: 15%;
+    font-size: 15px;
+    opacity: 0.45;
+    animation: spiderDrop 13s ease-in-out infinite 3s;
     pointer-events: none;
-
-    z-index: 2;
+    z-index: 0;
 }
 
-
-@keyframes batFly {
-
-    0% {
-        transform:
-            translate(0, 0)
-            rotate(0deg);
-    }
-
-    25% {
-        transform:
-            translate(40px, -20px)
-            rotate(8deg);
-    }
-
-    50% {
-        transform:
-            translate(80px, 5px)
-            rotate(-6deg);
-    }
-
-    75% {
-        transform:
-            translate(40px, 25px)
-            rotate(4deg);
-    }
-
-    100% {
-        transform:
-            translate(0, 0)
-            rotate(0deg);
-    }
-
+@keyframes spiderDrop {
+    0%   { top: -5%; opacity: 0; }
+    8%   { opacity: 0.6; }
+    45%  { top: 22%; }
+    50%  { top: 20%; }
+    55%  { top: 22%; }
+    85%  { top: 22%; opacity: 0.6; }
+    100% { top: -5%; opacity: 0; }
 }
 
-
-/* 🎃 Jemné mihotání světla dýně */
-
-@keyframes pumpkinFlicker {
-
-    0%, 100% {
-        opacity: 1;
-    }
-
-    40% {
-        opacity: 0.92;
-    }
-
-    47% {
-        opacity: 0.78;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    53% {
-        opacity: 0.88;
-    }
-
-    60% {
-        opacity: 0.97;
-    }
-
+/* Plovoucí dýně nahoře nad kartou */
+.player-card::before {
+    content: "🎃";
+    position: fixed;
+    top: 4%;
+    left: 20%;
+    font-size: 24px;
+    opacity: 0.45;
+    animation: pumpkinFloat 14s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+.player-card::after {
+    content: "🎃";
+    position: fixed;
+    top: 6%;
+    right: 18%;
+    font-size: 18px;
+    opacity: 0.35;
+    animation: pumpkinFloat 17s ease-in-out infinite reverse;
+    pointer-events: none;
+    z-index: 0;
 }
 
-
-/* Mihotá se světlo uvnitř dýně,
-   ne její celé tělo */
-
-.glow,
-.face {
-    animation:
-        pumpkinFlicker 3.2s ease-in-out infinite;
+@keyframes pumpkinFloat {
+    0%, 100% { transform: translateY(0) rotate(-3deg); }
+    50%      { transform: translateY(-10px) rotate(3deg); }
 }
 
 
@@ -235,7 +179,7 @@ body::after {
     }
 
     .radio::after {
-        font-size: 12px;
+        font-size: 16px;
     }
 
 }
