@@ -1,10 +1,98 @@
 [
   {
     "title": "Song 1",
-    "url": "music/song1.mp3"
+    "url": "music/hsong1.mp3"
   },
   {
     "title": "Song 2",
-    "url": "music/song2.mp3"
+    "url": "music/hsong2.mp3"
+  },
+  {
+    "title": "Song 3",
+    "url": "music/hsong3.mp3"
+  },
+  {
+    "title": "Song 4",
+    "url": "music/hsong4.mp3"
+  },
+  {
+    "title": "Song 5",
+    "url": "music/hsong5.mp3"
+  },
+  {
+    "title": "Song 6",
+    "url": "music/hsong6.mp3"
+  },
+  {
+    "title": "Song 7",
+    "url": "music/hsong7.mp3"
+  },
+  {
+    "title": "Song 8",
+    "url": "music/hsong8.mp3"
+  },
+  {
+    "title": "Song 9",
+    "url": "music/hsong9.mp3"
+  },
+  {
+    "title": "Song 10",
+    "url": "music/hsong10.mp3"
+  },
+  {
+    "title": "Song 11",
+    "url": "music/hsong11.mp3"
+  },
+  {
+    "title": "Song 12",
+    "url": "music/hsong12.mp3"
+  },
+  {
+    "title": "Song 13",
+    "url": "music/hsong13.mp3"
+  },
+  {
+    "title": "Song 14",
+    "url": "music/hsong14.mp3"
+  },
+  {
+    "title": "Song 15",
+    "url": "music/hsong15.mp3"
+  },
+  {
+    "title": "Song 16",
+    "url": "music/hsong16.mp3"
+  },
+  {
+    "title": "Song 17",
+    "url": "music/hsong17.mp3"
+  },
+  {
+    "title": "Song 18",
+    "url": "music/hsong18.mp3"
+  },
+  {
+    "title": "Song 19",
+    "url": "music/hsong19.mp3"
+  },
+  {
+    "title": "Song 20",
+    "url": "music/hsong20.mp3"
+  },
+  {
+    "title": "Song 21",
+    "url": "music/hsong21.mp3"
+  },
+  {
+    "title": "Song 22",
+    "url": "music/hsong22.mp3"
+  },
+  {
+    "title": "Song 23",
+    "url": "music/hsong23.mp3"
+  },
+  {
+    "title": "Song 24",
+    "url": "music/hsong24.mp3"
   }
 ]
