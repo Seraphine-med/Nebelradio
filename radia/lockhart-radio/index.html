@@ -1,28 +1,64 @@
 <!DOCTYPE html>
 <html lang="cs">
-
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>✨ Lockhart</title>
 
-<link rel="stylesheet" href="../template-radio/style.css">
-<link rel="stylesheet" href="theme.css">
-<link rel="stylesheet" href="effects.css">
+<!-- Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&display=swap"
+    rel="stylesheet"
+>
+
+<!-- Sdílený styl -->
+<link rel="stylesheet" id="nebelSharedStyle" href="">
+
+<script>
+    document.getElementById('nebelSharedStyle').href =
+        "../template-radio/style.css?t=" + Date.now();
+</script>
+
+<!-- Vlastní styl rádia -->
+<link rel="stylesheet" id="nebelTheme" href="">
+<link rel="stylesheet" id="nebelEffects" href="">
+
+<script>
+    document.getElementById('nebelTheme').href =
+        "theme.css?t=" + Date.now();
+
+    document.getElementById('nebelEffects').href =
+        "effects.css?t=" + Date.now();
+</script>
 
 </head>
-
 
 <body data-start="2026-07-24T08:25:00">
 
 <div class="radio">
 
-    <h1>✨ Lockhart ✨</h1>
+    <!-- ✨ Třpytivý pás nahoře -->
+    <div class="sparkle-belt">
+        <span class="belt-sparkle">✨</span>
+        <span class="belt-sparkle">🌟</span>
+        <span class="belt-sparkle">✨</span>
+    </div>
 
-    <audio id="audio"></audio>
+    <!-- 🎗️ Nadpis -->
+    <div class="title">
+        <span class="signature-icon">🖋️</span>
+        <h1>Lockhart</h1>
+    </div>
 
+    <!-- 📖 Podtitulek - drobný vtip -->
+    <p class="tagline">Bestsellerový autor. Váš oblíbený hlas rádia.</p>
 
+    <!-- 💿 PŘEHRÁVAČ -->
     <div class="player-card">
 
         <div class="vinyl-wrapper">
@@ -35,63 +71,33 @@
 
         </div>
 
-
-        <div class="song-info">
-        </div>
-
+        <div class="song-info"></div>
 
         <div class="progress-container">
-
             <div class="progress-bar">
-
                 <div id="progress-fill" class="progress-fill"></div>
-
             </div>
-
-
             <div class="time-labels">
-
                 <span id="current-time">00:00</span>
-
                 <span id="duration-time">00:00</span>
-
             </div>
-
         </div>
 
     </div>
 
-
     <div class="volume-control">
-
-        <button id="mute">
-            🔊
-        </button>
-
-        <input
-            type="range"
-            id="volume"
-            min="0"
-            max="1"
-            step="0.01"
-            value="0.7"
-        >
-
+        <button id="mute">🔊</button>
+        <input type="range" id="volume" min="0" max="1" step="0.01" value="0.7">
     </div>
 
 </div>
 
-
+<!-- 🎵 Script rádia s ochranou proti cache -->
 <script>
-
     var nebelScript = document.createElement('script');
-
     nebelScript.src = "../template-radio/assets/script.js?t=" + Date.now();
-
     document.body.appendChild(nebelScript);
-
 </script>
-
 
 </body>
 </html>
