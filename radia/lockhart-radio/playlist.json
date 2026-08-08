@@ -1,10 +1,74 @@
 [
   {
     "title": "Song 1",
-    "url": "music/song1.mp3"
+    "url": "music/lsong1.mp3"
   },
   {
     "title": "Song 2",
-    "url": "music/song2.mp3"
+    "url": "music/lsong2.mp3"
+  },
+  {
+    "title": "Song 3",
+    "url": "music/lsong3.mp3"
+  },
+  {
+    "title": "Song 4",
+    "url": "music/lsong4.mp3"
+  },
+  {
+    "title": "Song 5",
+    "url": "music/lsong5.mp3"
+  },
+  {
+    "title": "Song 6",
+    "url": "music/lsong6.mp3"
+  },
+  {
+    "title": "Song 7",
+    "url": "music/lsong7.mp3"
+  },
+  {
+    "title": "Song 8",
+    "url": "music/lsong8.mp3"
+  },
+  {
+    "title": "Song 9",
+    "url": "music/lsong9.mp3"
+  },
+  {
+    "title": "Song 10",
+    "url": "music/lsong10.mp3"
+  },
+  {
+    "title": "Song 11",
+    "url": "music/lsong11.mp3"
+  },
+  {
+    "title": "Song 12",
+    "url": "music/lsong12.mp3"
+  },
+  {
+    "title": "Song 13",
+    "url": "music/lsong13.mp3"
+  },
+  {
+    "title": "Song 14",
+    "url": "music/lsong14.mp3"
+  },
+  {
+    "title": "Song 15",
+    "url": "music/lsong15.mp3"
+  },
+  {
+    "title": "Song 16",
+    "url": "music/lsong16.mp3"
+  },
+  {
+    "title": "Song 17",
+    "url": "music/lsong17.mp3"
+  },
+  {
+    "title": "Song 18",
+    "url": "music/lsong18.mp3"
   }
 ]
