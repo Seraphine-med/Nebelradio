@@ -1,1 +1,141 @@
+/* ❄️ Sněhohrátky */
 
+body{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* Ledová záře */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:-20%;
+
+    background:
+
+    radial-gradient(circle at 20% 20%,
+    rgba(180,230,255,.12),
+    transparent 45%),
+
+    radial-gradient(circle at 80% 80%,
+    rgba(255,255,255,.08),
+    transparent 55%);
+
+    filter:blur(30px);
+
+    animation:iceGlow 12s ease-in-out infinite alternate;
+
+    pointer-events:none;
+
+    z-index:0;
+
+}
+
+@keyframes iceGlow{
+
+0%{
+
+transform:translateX(-2%);
+
+}
+
+100%{
+
+transform:translateX(2%);
+
+}
+
+}
+
+/* Padající vločky */
+
+.radio::before{
+
+content:"❄ ❅ ❆ ❄ ❅";
+
+position:fixed;
+
+top:-5%;
+
+left:0;
+
+width:100%;
+
+font-size:26px;
+
+letter-spacing:80px;
+
+opacity:.35;
+
+animation:snowFall 15s linear infinite;
+
+pointer-events:none;
+
+}
+
+@keyframes snowFall{
+
+0%{
+
+transform:translateY(-10%);
+
+}
+
+100%{
+
+transform:translateY(120%);
+
+}
+
+}
+
+/* Třpyt */
+
+.player-card{
+
+position:relative;
+
+}
+
+.player-card::after{
+
+content:"";
+
+position:absolute;
+
+inset:-4px;
+
+border-radius:inherit;
+
+box-shadow:
+
+0 0 18px rgba(255,255,255,.15);
+
+animation:sparkle 4s infinite ease-in-out;
+
+pointer-events:none;
+
+}
+
+@keyframes sparkle{
+
+0%,100%{
+
+opacity:.2;
+
+}
+
+50%{
+
+opacity:.7;
+
+}
+
+}
