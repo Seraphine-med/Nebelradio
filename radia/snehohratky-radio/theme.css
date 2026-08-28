@@ -1,1 +1,124 @@
+/* ❄️ Sněhohrátky */
 
+body{
+    background:#0f1c33;
+}
+
+/* Hlavní karta */
+
+.radio{
+
+    background:rgba(220,240,255,.16);
+
+    border:1px solid rgba(255,255,255,.45);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 0 35px rgba(170,220,255,.18),
+        inset 0 0 25px rgba(255,255,255,.05);
+
+}
+
+/* Player */
+
+.player-card{
+
+    background:rgba(255,255,255,.10);
+
+    border:1px solid rgba(255,255,255,.25);
+
+}
+
+/* Nadpis */
+
+.title{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:16px;
+
+}
+
+h1{
+
+    font-family:"Cinzel",serif;
+
+    color:#eef8ff;
+
+    font-weight:700;
+
+    letter-spacing:4px;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,.5),
+        0 0 20px rgba(160,220,255,.25);
+
+}
+
+/* Vločka */
+
+.snowflake{
+
+    width:46px;
+    height:auto;
+
+}
+
+.flake{
+
+    fill:none;
+    stroke:#eaf8ff;
+    stroke-width:2.2;
+    stroke-linecap:round;
+
+}
+
+.center{
+
+    fill:#ffffff;
+
+}
+
+/* Progress */
+
+.progress-bar{
+
+    background:rgba(255,255,255,.18);
+
+}
+
+.progress-fill{
+
+    background:white;
+
+    box-shadow:
+        0 0 10px rgba(255,255,255,.95),
+        0 0 20px rgba(170,220,255,.7);
+
+}
+
+/* čas */
+
+.time-labels{
+
+    color:#eef8ff;
+
+}
+
+/* volume */
+
+#volume{
+
+    accent-color:white;
+
+}
+
+#mute{
+
+    background:rgba(255,255,255,.18);
+
+    color:white;
+
+}
