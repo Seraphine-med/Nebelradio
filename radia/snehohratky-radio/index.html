@@ -3,62 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sněhohrátky</title>
+
+<title>❄️ Sněhohrátky</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" id="nebelSharedStyle" href="">
+<link rel="stylesheet" id="nebelTheme" href="">
+<link rel="stylesheet" id="nebelEffects" href="">
+
 <script>
-    document.getElementById('nebelSharedStyle').href =
-        "style.css?t=" + Date.now();
+document.getElementById("nebelSharedStyle").href =
+    "../template-radio/style.css?t=" + Date.now();
+
+document.getElementById("nebelTheme").href =
+    "theme.css?t=" + Date.now();
+
+document.getElementById("nebelEffects").href =
+    "effects.css?t=" + Date.now();
 </script>
+
 </head>
+
 <body data-start="2026-07-24T08:25:00">
+
 <div class="radio">
-    <h1>Sněhohrátky</h1>
+
     <audio id="audioA"></audio>
-<audio id="audioB"></audio>
+    <audio id="audioB"></audio>
+
+    <div class="title">
+
+        <!-- vločka -->
+        <svg class="snowflake" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+
+            <circle class="center" cx="30" cy="30" r="2"/>
+
+            <line class="flake" x1="30" y1="6" x2="30" y2="54"/>
+            <line class="flake" x1="6" y1="30" x2="54" y2="30"/>
+            <line class="flake" x1="12" y1="12" x2="48" y2="48"/>
+            <line class="flake" x1="48" y1="12" x2="12" y2="48"/>
+
+        </svg>
+
+        <h1>Sněhohrátky</h1>
+
+    </div>
 
     <div class="player-card">
 
         <div class="vinyl-wrapper">
+
             <div class="vinyl">
                 <div class="center-label"></div>
             </div>
 
             <button id="play" class="play-btn">▶</button>
+
         </div>
 
-        <div class="song-info">
-</div>
+        <div class="song-info"></div>
 
         <div class="progress-container">
+
             <div class="progress-bar">
                 <div id="progress-fill" class="progress-fill"></div>
             </div>
+
             <div class="time-labels">
                 <span id="current-time">00:00</span>
                 <span id="duration-time">00:00</span>
             </div>
+
         </div>
 
     </div>
 
     <div class="volume-control">
-        <button id="mute">
-            🔊
-        </button>
-        <input 
-            type="range" 
+
+        <button id="mute">🔊</button>
+
+        <input
+            type="range"
+            id="volume"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0.7">
+
+    </div>
+
+</div>
+
+    <div class="volume-control">
+
+        <button id="mute">🔊</button>
+
+        <input
+            type="range"
             id="volume"
             min="0"
             max="1"
             step="0.01"
             value="0.7"
         >
+
     </div>
+
 </div>
+
 <script>
-    var nebelScript = document.createElement('script');
-    nebelScript.src = "../assets/script.js?t=" + Date.now();
-    document.body.appendChild(nebelScript);
+var nebelScript = document.createElement("script");
+nebelScript.src = "../template-radio/assets/script.js?t=" + Date.now();
+document.body.appendChild(nebelScript);
 </script>
+
 </body>
 </html>
