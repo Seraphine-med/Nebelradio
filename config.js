@@ -1,5 +1,5 @@
 // Aktivní rádio pro návštěvníky webu
-const ACTIVE_RADIO = "snehohratky-radio";
+const ACTIVE_RADIO = "lockhart-radio";
 
 // Dostupná rádia:
 // template-radio
