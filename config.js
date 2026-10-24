@@ -1,5 +1,5 @@
 // Aktivní rádio pro návštěvníky webu
-const ACTIVE_RADIO = "halloween-radio";
+const ACTIVE_RADIO = "dusicky-radio";
 
 // Dostupná rádia:
 // template-radio
