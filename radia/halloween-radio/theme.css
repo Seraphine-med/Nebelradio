@@ -3,7 +3,7 @@
 body {
     background-color: #14071f;
 
-    background-image:
+    background-image: url("assets/halloweenbackground.png");
         radial-gradient(
             circle at 50% 15%,
             rgba(255, 170, 70, 0.20) 0%,
