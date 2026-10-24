@@ -7,39 +7,6 @@ body {
 }
 
 
-/* 🌕 Měsíc */
-
-body::before {
-    content: "";
-
-    position: fixed;
-
-    top: 8%;
-    right: 12%;
-
-    width: 140px;
-    height: 140px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle at 35% 35%,
-            #fff8df,
-            #d8c9a0
-        );
-
-    box-shadow:
-        0 0 35px rgba(255, 245, 210, 0.25),
-        0 0 70px rgba(255, 245, 210, 0.15);
-
-    opacity: 0.45;
-
-    z-index: 0;
-    pointer-events: none;
-}
-
-
 /* 🌫️ Jemná mlha */
 
 body::after {
