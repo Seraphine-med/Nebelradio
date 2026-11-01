@@ -77,43 +77,75 @@ fetch("playlist.json")
 });
 
 
+
 function getDurations(){
 
-    let loaded = 0;
+    let nextIndex = 0;
+    let active = 0;
+    let finished = 0;
 
-    playlist.forEach((song, index) => {
+    const maxConcurrent = 4;
+    const timeoutDuration = 20000;
 
-        let audioTest = new Audio();
+    function loadNext(){
 
-        audioTest.src = song.url;
+        while(active < maxConcurrent && nextIndex < playlist.length){
 
-        audioTest.addEventListener("loadedmetadata", function(){
+            const index = nextIndex++;
+            const song = playlist[index];
 
-            durations[index] = audioTest.duration;
-            loaded++;
+            active++;
 
-            if(loaded === playlist.length){
-                onRadioReady();
+            const audioTest = new Audio();
+            audioTest.preload = "metadata";
+
+            let completed = false;
+
+            const timeout = setTimeout(() => {
+                finish(0);
+                console.warn("Načítání skladby vypršelo:", song.url);
+            }, timeoutDuration);
+
+            function finish(duration){
+
+                if(completed) return;
+                completed = true;
+
+                clearTimeout(timeout);
+
+                durations[index] = duration;
+
+                active--;
+                finished++;
+
+                if(finished === playlist.length){
+                    onRadioReady();
+                } else {
+                    loadNext();
+                }
             }
 
-        });
+            audioTest.addEventListener("loadedmetadata", function(){
+                finish(
+                    Number.isFinite(audioTest.duration)
+                    ? audioTest.duration
+                    : 0
+                );
+            }, { once: true });
 
-        audioTest.addEventListener("error", function(){
+            audioTest.addEventListener("error", function(){
+                console.warn("Nepodařilo se načíst:", song.url);
+                finish(0);
+            }, { once: true });
 
-            console.warn("Nepodařilo se načíst skladbu:", song.url);
+            audioTest.src = song.url;
+            audioTest.load();
+        }
+    }
 
-            durations[index] = 0;
-            loaded++;
-
-            if(loaded === playlist.length){
-                onRadioReady();
-            }
-
-        });
-
-    });
-
+    loadNext();
 }
+
 
 function onRadioReady(){
 
